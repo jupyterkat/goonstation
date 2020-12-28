@@ -2,6 +2,57 @@
 
 SERVER_SPECIFIC_CONFIGS
 
+# server id number
+SERVERKEY 1
+
+# server name
+SERVERID main
+
+# server name
+SERVERNAME AusGoon [100% OPENSOURCE API]
+
+# server location/region
+SERVERREGION Oceania
+
+# Enable numerical suffix
+#SERVERSUFFIX
+
+#WHITELIST_ENABLED
+
+ALLOW_MAP_SWITCHING
+
+#ROTATING_FULL_LOGS
+
+# Admin permissions
+ALLOW_ADMIN_SPAWNING
+ALLOW_ADMIN_REV
+ALLOW_ADMIN_SOUND
+ALLOW_ADMIN_JUMP
+
+# Medals
+#MEDALHUB
+#MEDALPASS
+
+# Api stuff
+GOONHUB_API_VERSION 1
+GOONHUB_API_ENDPOINT http://127.0.0.1/api
+GOONHUB_API_IP 127.0.0.1
+GOONHUB_API_TOKEN auth_key
+GOONHUB_API_WEB_TOKEN auth_key
+GOONHUB2_HOSTNAME 127.0.0.1
+PLAYER_NOTES_BASEURL http://127.0.0.1/api/notes
+# I'm using the plain md5
+PLAYER_NOTES_AUTH f0729595a08e6b03484d3d2c2b5c76a6
+
+# goonhub website parser
+#GOONHUB_PARSER_URL http://localhost
+#GOONHUB_PARSER_KEY auth_key
+
+# irc bot
+#IRCLOG_URL http://localhost
+#IRCBOT_API http://localhost
+#IRCBOT_IP http://localhost
+
 # log OOC channel
 LOG_OOC
 
@@ -16,6 +67,15 @@ LOG_ACCESS
 
 # log game actions (start of round, results, etc.)
 LOG_GAME
+
+LOG_DEBUG
+LOG_COMBAT
+LOG_WHISPER
+LOG_AHELP
+LOG_MHELP
+LOG_STATION
+LOG_TELEPATHY
+LOG_VEHICLES
 
 # probabilities for game modes chosen in "secret" and "random" modes
 #
@@ -81,10 +141,6 @@ ALLOW_AI
 # Disable respawning
 NORESPAWN
 
-# Server Name
-SERVERNAME Goonstation
-#SERVERSUFFIX
-SERVERREGION Development
-
-CDN http://cdn.goonhub.com
-ENV dev
+#CDN http://cdn.goonhub.com
+DISABLE_RESOURCE_CACHE
+ENV prod
