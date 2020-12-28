@@ -20,7 +20,7 @@ var/datum/preMapLoad/preMapLoad = new
 
 //Secret Code Handling
 #ifndef FASTDMM
-#include "+secret\__secret.dme"
+//#include "+secret\__secret.dme"
 #endif
 #include "code\__secret_public.dme"
 
