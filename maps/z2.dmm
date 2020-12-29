@@ -82754,14 +82754,12 @@
 	},
 /area/hospital/samostrel)
 "ftk" = (
-/obj/machinery/door/unpowered/wood/sordBloodDoor{
+/obj/machinery/door/unpowered/wood{
 	icon = 'icons/obj/doors/door_office.dmi';
-	lock_dir = 8
+	lock_dir = 4
 	},
 /turf/unsimulated/floor/wood/two,
-/area/centcom/offices{
-	icon_state = "blue"
-	})
+/area/centcom/offices/thefakeelon)
 "fCL" = (
 /obj/machinery/light/incandescent/warm/very{
 	dir = 1
@@ -83264,8 +83262,7 @@
 "hVQ" = (
 /obj/machinery/door/unpowered/wood{
 	icon = 'icons/obj/doors/door_office.dmi';
-	lock_dir = 4;
-	locked = 1
+	lock_dir = 4
 	},
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/mcterra)
@@ -84159,9 +84156,7 @@
 /turf/unsimulated/floor/plating/scorched,
 /area/adventure/channel/flingy)
 "lEG" = (
-/obj/admin_plaque{
-	name = "Sord's Office"
-	},
+/obj/admin_plaque,
 /turf/unsimulated/wall{
 	icon = 'icons/misc/worlds.dmi';
 	icon_state = "leadwall"
@@ -86549,6 +86544,9 @@
 /area/centcom/offices{
 	icon_state = "blue"
 	})
+"vLQ" = (
+/turf/unsimulated/floor/wood/two,
+/area/centcom/offices/thefakeelon)
 "vNH" = (
 /obj/indestructible/shuttle_corner{
 	dir = 8;
@@ -164826,9 +164824,9 @@ dXK
 jEZ
 dwZ
 dvw
-dvW
-dvW
-dvW
+vLQ
+vLQ
+vLQ
 dvw
 aES
 aES
@@ -165128,9 +165126,9 @@ etj
 nsm
 puA
 dvw
-dvW
-dvW
-dvW
+vLQ
+vLQ
+vLQ
 dvw
 aES
 aES
@@ -165430,9 +165428,9 @@ fCL
 oRd
 puA
 dvw
-dvW
-dvW
-dvW
+vLQ
+vLQ
+vLQ
 dvw
 aES
 aES
@@ -165732,9 +165730,9 @@ fGD
 oSl
 rou
 dvw
-dvW
-dvW
-dvW
+vLQ
+vLQ
+vLQ
 dvw
 aES
 aES
