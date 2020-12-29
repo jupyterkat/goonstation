@@ -72663,10 +72663,12 @@
 	icon_state = "blue"
 	})
 "dvV" = (
-/obj/admin_plaque,
-/turf/unsimulated/wall{
-	icon = 'icons/misc/worlds.dmi';
-	icon_state = "leadwall"
+/obj/admin_plaque{
+	name = "Terra's Office";
+	pixel_x = 32
+	},
+/turf/unsimulated/floor{
+	icon_state = "floor"
 	},
 /area/centcom/offices{
 	icon_state = "blue"
@@ -73099,11 +73101,13 @@
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/studenterhue)
 "dwZ" = (
-/obj/machinery/light,
-/turf/unsimulated/floor/wood/two,
-/area/centcom/offices{
-	icon_state = "blue"
-	})
+/obj/stool/bed{
+	name = "terra's bed"
+	},
+/obj/item/clothing/suit/bedsheet/captain,
+/obj/machinery/light/incandescent/warm/very,
+/turf/unsimulated/floor/carpet/green/fancy/edge/sw,
+/area/centcom/offices/mcterra)
 "dxa" = (
 /obj/machinery/light{
 	dir = 8
@@ -82398,22 +82402,9 @@
 /turf/unsimulated/floor/carpet/grime,
 /area/crypt/sigma/rd)
 "dXK" = (
-/obj/item/paper{
-	icon_state = "paper";
-	info = "You think you can hide from us in your shitty little office on earth? Think again";
-	name = "fuck you, licorice";
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/bat,
-/obj/item/spacecash,
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
+/obj/filing_cabinet,
+/turf/unsimulated/floor/carpet/green/fancy/edge/nw,
+/area/centcom/offices/mcterra)
 "dXN" = (
 /obj/table/wood/auto/desk,
 /obj/machinery/light/lamp,
@@ -82513,17 +82504,10 @@
 	},
 /area/shuttle/merchant_shuttle/diner_centcom)
 "etj" = (
-/obj/machinery/light{
-	on = 1
-	},
-/obj/item/spacecash,
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
+/obj/table/wood/auto/desk,
+/obj/machinery/light/lamp/green,
+/turf/unsimulated/floor/carpet/green/fancy/edge/north,
+/area/centcom/offices/mcterra)
 "etu" = (
 /obj/machinery/vending/mechanics{
 	pixel_x = 10;
@@ -82747,7 +82731,7 @@
 	name = "Unban Appeal";
 	pixel_y = 8
 	},
-/turf/unsimulated/floor/wood/two,
+/turf/unsimulated/floor/carpet/green/fancy,
 /area/centcom/offices/mrfishstick)
 "fqO" = (
 /obj/filing_cabinet,
@@ -82775,35 +82759,24 @@
 	lock_dir = 8
 	},
 /turf/unsimulated/floor/wood/two,
-/area/centcom/offices/sord)
+/area/centcom/offices{
+	icon_state = "blue"
+	})
 "fCL" = (
-/obj/item/spacecash/twenty{
-	pixel_x = -12;
-	pixel_y = 4
+/obj/machinery/light/incandescent/warm/very{
+	dir = 1
 	},
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
+/obj/table/wood/auto/desk,
+/obj/machinery/computer3/luggable{
+	name = "terra's laptop"
 	},
-/area/centcom/offices/sord)
+/turf/unsimulated/floor/carpet/green/fancy/edge/north,
+/area/centcom/offices/mcterra)
 "fGD" = (
-/obj/machinery/light{
-	dir = 1;
-	on = 1
-	},
-/obj/item/spacecash/fivehundred{
-	pixel_x = -5;
-	pixel_y = -12
-	},
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
+/obj/table/wood/auto/desk,
+/obj/item/lawbook,
+/turf/unsimulated/floor/carpet/green/fancy/edge/ne,
+/area/centcom/offices/mcterra)
 "fKf" = (
 /obj/decal/fakeobjects{
 	anchored = 1;
@@ -83295,9 +83268,7 @@
 	locked = 1
 	},
 /turf/unsimulated/floor/wood/two,
-/area/centcom/offices{
-	icon_state = "blue"
-	})
+/area/centcom/offices/mcterra)
 "iag" = (
 /obj/machinery/shuttle/engine/heater{
 	icon_state = "alt_heater"
@@ -83644,12 +83615,8 @@
 /turf/unsimulated/floor/shuttle,
 /area/shuttle/escape/centcom/cogmap)
 "jEZ" = (
-/obj/decal/poster/wallsign/dont_panic{
-	pixel_y = -31;
-	real_name = "DON'T PANIC"
-	},
-/turf/unsimulated/floor/wood/two,
-/area/centcom/offices/mrfishstick)
+/turf/unsimulated/floor/carpet/green/fancy/edge/west,
+/area/centcom/offices/mcterra)
 "jJx" = (
 /turf/unsimulated/wall{
 	dir = 8;
@@ -84576,14 +84543,8 @@
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/tarmunora)
 "nsm" = (
-/obj/item/spacecash,
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
+/turf/unsimulated/floor/carpet/green/fancy,
+/area/centcom/offices/mcterra)
 "nte" = (
 /turf/unsimulated/floor/setpieces/Azarak/cavefloor/floor2{
 	desc = "It's over Enakai";
@@ -85019,37 +84980,15 @@
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/mrfishstick)
 "oRd" = (
-/obj/decal/cleanable/blood{
-	icon_state = "smear3"
+/obj/stool/chair/office/syndie{
+	dir = 1;
+	name = "terra's chair"
 	},
-/obj/item/clothing/gloves/boxing,
-/obj/item/clothing/under/gimmick/princess,
-/obj/item/clothing/mask/horse_mask,
-/obj/decal/skeleton,
-/obj/fluid_spawner{
-	amount = 10000;
-	reagent_id = "blood"
-	},
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
+/turf/unsimulated/floor/carpet/green/fancy,
+/area/centcom/offices/mcterra)
 "oSl" = (
-/obj/item/spacecash/fifty,
-/obj/item/spacecash{
-	pixel_x = 4;
-	pixel_y = 8
-	},
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
+/turf/unsimulated/floor/carpet/green/fancy/edge/east,
+/area/centcom/offices/mcterra)
 "oSI" = (
 /obj/decal/fakeobjects/pipe{
 	icon = 'icons/obj/atmospherics/pipes/manifold_pipe.dmi';
@@ -85157,14 +85096,8 @@
 	icon_state = "blue"
 	})
 "puA" = (
-/obj/item/spacecash/five,
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
+/turf/unsimulated/floor/carpet/green/fancy/edge/south,
+/area/centcom/offices/mcterra)
 "puF" = (
 /obj/decal/fakeobjects/pipe{
 	desc = "It won't budge.";
@@ -85697,14 +85630,9 @@
 	},
 /area/hospital/samostrel)
 "rou" = (
-/obj/item/spacecash/fifty,
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
+/obj/storage/crate/bin,
+/turf/unsimulated/floor/carpet/green/fancy/edge/se,
+/area/centcom/offices/mcterra)
 "rpG" = (
 /turf/unsimulated/floor/setpieces/rootfloor{
 	icon_state = "rootfloor_2"
@@ -86117,14 +86045,6 @@
 	icon_state = "Stairs2_wide"
 	},
 /area/centcom)
-"sNn" = (
-/obj/item/spacecash/twenty,
-/obj/item/spacecash{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/turf/unsimulated/floor/wood/two,
-/area/centcom/offices/sord)
 "sPS" = (
 /turf/unsimulated/wall/setpieces/leadwall/junction{
 	dir = 4
@@ -86150,17 +86070,6 @@
 /turf/space,
 /turf/simulated/floor,
 /area/ship_interior/cruisertest)
-"sYB" = (
-/obj/item/spacecash{
-	pixel_x = 8
-	},
-/turf/unsimulated/floor/wood/two{
-	desc = " It is made of wood.";
-	explosion_protection = 1;
-	explosion_resistance = 1;
-	name = "wood floor"
-	},
-/area/centcom/offices/sord)
 "tdA" = (
 /obj/machinery/cruiser_destroyable/cruiser_component_slot/weapon/left,
 /turf/space,
@@ -164309,7 +164218,7 @@ dvy
 dvy
 dvy
 dvy
-dvy
+dvV
 dvy
 dxn
 dvy
@@ -164611,7 +164520,7 @@ pJQ
 gPB
 dDP
 dvN
-dvV
+dDP
 hVQ
 dDP
 dvN
@@ -164913,13 +164822,13 @@ qwW
 hnO
 ius
 dvw
-dvW
-dvW
+dXK
+jEZ
 dwZ
 dvw
-nsm
-sNn
-etj
+dvW
+dvW
+dvW
 dvw
 aES
 aES
@@ -165213,15 +165122,15 @@ dCK
 dvw
 hnO
 hnO
-jEZ
+hnO
 dvw
-dvW
-dvW
-dvW
-dvw
-fCL
-dXK
+etj
+nsm
 puA
+dvw
+dvW
+dvW
+dvW
 dvw
 aES
 aES
@@ -165517,13 +165426,13 @@ vlp
 lRg
 njW
 dvw
-dvX
-dvW
-dvW
-dvw
-fGD
+fCL
 oRd
-sYB
+puA
+dvw
+dvW
+dvW
+dvW
 dvw
 aES
 aES
@@ -165819,13 +165728,13 @@ qGH
 fov
 oPY
 dvw
-dvW
-dvW
-dvW
-dvw
-nsm
+fGD
 oSl
 rou
+dvw
+dvW
+dvW
+dvW
 dvw
 aES
 aES

@@ -265,6 +265,12 @@ var/global/Z4_ACTIVE = 0 //Used for mob processing purposes
 	zewaka
 		ckey = "zewaka"
 		name = "Office of Shitty Bill Jr."
+	mcterra
+		ckey = "mcterra"
+		name = "Office of Terra"
+	thefakeelon
+		ckey = "thefakeelon"
+		name = "Office of Doris"
 
 /area/centcom/lobby
 	name = "NT Offices Lobby"
