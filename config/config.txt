@@ -141,6 +141,6 @@ ALLOW_AI
 # Disable respawning
 NORESPAWN
 
-#CDN http://cdn.goonhub.com
+CDN http://rsc.austation.net/goon
 DISABLE_RESOURCE_CACHE
 ENV prod

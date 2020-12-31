@@ -546,7 +546,7 @@ var/global/list/vpn_ip_checks = list() //assoc list of ip = true or ip = false. 
 	if (widescreen_checked)
 		if (splitter_value < 67.0)
 			src.set_widescreen(1)
-	
+
 	src.screenSizeHelper.registerOnLoadCallback(CALLBACK(src, .proc/checkHiRes))
 
 	var/is_vert_splitter = winget( src, "menu.horiz_split", "is-checked" ) != "true"
@@ -1454,7 +1454,7 @@ var/global/curr_day = null
 </head>
 <body>
 <video autoplay style="position:fixed;top:0px;right:0px;left:0px;bottom:0px">
-<source src="http://cdn.goonhub.com/misc/cinematics/[name].mp4" type="video/mp4">
+<source src="http://rsc.austation.net/goon/misc/cinematics/[name].mp4" type="video/mp4">
 </video>
 
 <script type="text/javascript">

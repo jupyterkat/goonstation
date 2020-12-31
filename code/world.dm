@@ -760,7 +760,7 @@ var/f_color_selector_handler/F_Color_Selector
 	else
 		s += "<b>SERVER NAME HERE &#8212; "
 
-	s += "The classic SS13 experience. &#8212; (<a href=\"https://bit.ly/3pVRuTT\">Discord</a>)<br>"
+	s += "The classic SS13 experience. &#8212; (<a href=\"discord.gg/ZTGQAqB\">Discord</a>)<br>"
 
 	if (map_settings)
 		var/map_name = istext(map_settings.display_name) ? "[map_settings.display_name]" : "[map_settings.name]"
