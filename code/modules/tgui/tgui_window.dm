@@ -77,8 +77,6 @@
 	if(length(inline_assets_str))
 		inline_assets_str = "<script>\n" + inline_assets_str + "</script>\n"
 
-	logTheThing("diary", null, null, "Opening tgui window with asset string: [inline_assets_str]", "debug")
-
 	html = replacetextEx(html, "<!-- tgui:assets -->", inline_assets_str)
 
 	// Open the window
