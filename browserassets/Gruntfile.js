@@ -23,7 +23,7 @@ module.exports = function (grunt) {
   };
 
   var rev = grunt.file.read('revision') || '1';
-  var cdn = 'http://rsc.austation.net/goon';
+  var cdn = 'http://rsc.austation.net/goon-cdn';
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -259,7 +259,7 @@ module.exports = function (grunt) {
     'clean',
     'string-replace:css',
     //'sass',
-    'imagemin',
+    //'imagemin',
     'svgmin',
     'postcss',
     'string-replace:js',
