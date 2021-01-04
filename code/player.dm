@@ -117,7 +117,7 @@
 
 		// Via rust-g HTTP
 		var/datum/http_request/request = new() //If it fails, oh well...
-		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.goonhub_api_endpoint]/cloudsave?dataput&api_key=[config.ircbot_api]&ckey=[ckey]&key=[url_encode(key)]&value=[url_encode(clouddata[key])]", "", "")
+		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.goonhub_api_endpoint]/cloudsave?dataput&api_key=[md5(config.goonhub_api_token)]&ckey=[ckey]&key=[url_encode(key)]&value=[url_encode(clouddata[key])]", "", "")
 		request.begin_async()
 		return TRUE // I guess
 
@@ -134,7 +134,7 @@
 		if(!cdn)
 			return
 		var/datum/http_request/request = new()
-		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.goonhub_api_endpoint]/cloudsave?list&ckey=[ckey]&api_key=[config.ircbot_api]", "", "")
+		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.goonhub_api_endpoint]/cloudsave?list&ckey=[ckey]&api_key=[md5(config.goonhub_api_token)]", "", "")
 		request.begin_async()
 		UNTIL(request.is_complete())
 		var/datum/http_response/response = request.into_response()
