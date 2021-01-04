@@ -68,6 +68,7 @@ LOG_ACCESS
 # log game actions (start of round, results, etc.)
 LOG_GAME
 
+# additional logging that's not enabled by default (seriously, why isn't *DEBUG* logging enabled for a *DEV* server???)
 LOG_DEBUG
 LOG_COMBAT
 LOG_WHISPER
@@ -141,6 +142,6 @@ ALLOW_AI
 # Disable respawning
 NORESPAWN
 
-CDN http://rsc.austation.net/goon
-DISABLE_RESOURCE_CACHE
+CDN http://rsc.austation.net/goon-cdn
+#DISABLE_RESOURCE_CACHE
 ENV prod
