@@ -15,6 +15,9 @@ var/datum/preMapLoad/preMapLoad = new
 #define DEBUG
 // END_PREFERENCES
 
+//Map Define File Include for TGS
+#include "_std\__map.dm"
+
 //Standard Library Inclusions
 #include "_std\__std.dme"
 
