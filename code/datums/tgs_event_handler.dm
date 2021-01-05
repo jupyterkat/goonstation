@@ -21,7 +21,7 @@
 			// Map switcher TGS integration
 			if(mapSwitcher.locked) // we're waiting on the results from a map switch
 				var/attemptedMap = mapSwitcher.next ? mapSwitcher.next : mapSwitcher.current
-				msg = "Compilation of [attemptedMap] failed! Falling back to previous setting of [mapSwitcher.nextPrior ? mapSwitcher.nextPrior : mapSwitcher.current]"
+				var/msg = "Compilation of [attemptedMap] failed! Falling back to previous setting of [mapSwitcher.nextPrior ? mapSwitcher.nextPrior : mapSwitcher.current]"
 				logTheThing("admin", null, null, msg)
 				logTheThing("diary", null, null, msg, "admin")
 				message_admins(msg)
@@ -33,7 +33,7 @@
 			// Map switcher TGS integration
 			if(mapSwitcher.locked) // we're waiting on the results from a map switch
 				var/attemptedMap = mapSwitcher.next ? mapSwitcher.next : mapSwitcher.current
-				msg = "Compilation of [attemptedMap] succeeded!"
+				var/msg = "Compilation of [attemptedMap] succeeded!"
 				logTheThing("admin", null, null, msg)
 				logTheThing("diary", null, null, msg, "admin")
 				message_admins(msg)
