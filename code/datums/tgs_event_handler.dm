@@ -38,7 +38,7 @@
 				logTheThing("diary", null, null, msg, "admin")
 				message_admins(msg)
 				// Tell the map switcher we're ready
-				mapSwitcher.unlock(mapNames[attemptedMap]['id'])
+				mapSwitcher.unlock(mapNames[attemptedMap]["id"])
 		if(TGS_EVENT_WATCHDOG_DETACH)
 			message_admins("TGS restarting...")
 			attached = FALSE
