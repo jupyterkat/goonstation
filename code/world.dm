@@ -399,6 +399,12 @@ var/f_color_selector_handler/F_Color_Selector
 /world/New()
 	Z_LOG_DEBUG("World/New", "World New()")
 	TgsNew(new /datum/tgs_event_handler/impl, TGS_SECURITY_TRUSTED)
+
+	// Load in the current commit SHA from TGS...
+	if(TgsAvailable())
+		var/datum/tgs_revision_information/rev = TgsRevision()
+		vcs_revision = rev.commit
+
 	tick_lag = MIN_TICKLAG//0.4//0.25
 //	loop_checks = 0
 
