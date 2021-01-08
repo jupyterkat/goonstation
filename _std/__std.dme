@@ -101,6 +101,7 @@
 #include "macros\vehicles.dm"
 #include "address.dm"
 #include "ass_jam.dm"
+#include "chat.dm"
 #include "color.dm"
 #include "datum.dm"
 #include "machinery.dm"

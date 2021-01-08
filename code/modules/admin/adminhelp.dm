@@ -56,17 +56,10 @@
 
 	if (!first_adminhelp_happened)
 		first_adminhelp_happened = 1
-		var/ircmsg[] = new()
-		ircmsg["key"] = "Loggo"
-		ircmsg["name"] = "First Adminhelp Notice"
-		ircmsg["msg"] = "Logs for this round can be found here: https://mini.xkeeper.net/ss13/admin/log-get.php?id=[config.server_id]&date=[roundLog_date]"
-		ircbot.export("help", ircmsg)
+		// Terra's Note: old link (waka's site): https://mini.xkeeper.net/ss13/admin/log-get.php?id=[config.server_id]&date=[roundLog_date]
+		discord_send("Admin-Help From: First Adminhelp Notice (Loggo): Logs for this round can be found here: NOT IMPLEMENTED", -1)
 
-	var/ircmsg[] = new()
-	ircmsg["key"] = client.key
-	ircmsg["name"] = client.mob.real_name
-	ircmsg["msg"] = html_decode(msg)
-	ircbot.export("help", ircmsg)
+	discord_send("Admin-Help From: [client.mob.real_name] ([client.key]): [html_decode(msg)]", -1)
 
 /mob/verb/mentorhelp()
 	set category = "Commands"
@@ -132,11 +125,9 @@
 	boutput(client.mob, "<span class='mhelp'><b>MENTORHELP: You</b>: [msg]</span>")
 	logTheThing("mentor_help", client.mob, null, "MENTORHELP: [msg]")
 	logTheThing("diary", client.mob, null, "MENTORHELP: [msg]", "mhelp")
-	var/ircmsg[] = new()
-	ircmsg["key"] = client.key
-	ircmsg["name"] = client.mob.job ? "[client.mob.real_name] \[[client.mob.job]]" : client.mob.real_name
-	ircmsg["msg"] = html_decode(msg)
-	ircbot.export("mentorhelp", ircmsg)
+	var/key = client.key
+	var/name = client.mob.job ? "[client.mob.real_name] \[[client.mob.job]]" : client.mob.real_name
+	discord_send("MENTORHELP: [name] ([key]): [html_decode(msg)]", -1)
 
 /mob/verb/pray(msg as text)
 	set category = "Commands"
@@ -258,13 +249,11 @@
 		logTheThing("admin_help", user, M, "<b>PM'd [constructTarget(M,"admin_help")]</b>: [t]")
 		logTheThing("diary", user, M, "PM'd [constructTarget(M,"diary")]: [t]", "ahelp")
 
-		var/ircmsg[] = new()
-		ircmsg["key"] = user?.client ? user.client.key : ""
-		ircmsg["name"] = user.real_name
-		ircmsg["key2"] = (M != null && M.client != null && M.client.key != null) ? M.client.key : ""
-		ircmsg["name2"] = (M != null && M.real_name != null) ? M.real_name : ""
-		ircmsg["msg"] = html_decode(t)
-		ircbot.export("pm", ircmsg)
+		var/key = user?.client ? user.client.key : ""
+		var/name = user.real_name
+		var/key2 = (M != null && M.client != null && M.client.key != null) ? M.client.key : ""
+		var/name2 = (M != null && M.real_name != null) ? M.real_name : ""
+		discord_send("Admin PM From [name] ([key]) To [name2] ([key2]): [html_decode(t)]", -1)
 
 		//we don't use message_admins here because the sender/receiver might get it too
 		for (var/client/CC)

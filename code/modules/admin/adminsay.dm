@@ -20,11 +20,7 @@
 		special = "gfartadmin"
 	message_admins("[key_name(src)]: <span class=\"adminMsgWrap [special]\">[msg]</span>", 1)
 
-	var/ircmsg[] = new()
-	ircmsg["key"] = src.key
-	ircmsg["name"] = src.mob.real_name
-	ircmsg["msg"] = html_decode(msg)
-	ircbot.export("asay", ircmsg)
+	discord_send("Asay from [src.mob.real_name] ([src.key]): [html_decode(msg)]", -1)
 
 /client/proc/cmd_admin_forceallsay(msg as text)
 	SET_ADMIN_CAT(ADMIN_CAT_FUN)
