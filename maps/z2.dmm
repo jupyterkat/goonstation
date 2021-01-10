@@ -54835,7 +54835,7 @@
 /area/owlery/gangzone)
 "cGq" = (
 /obj/decal/cleanable/blood/drip/high,
-/obj/reagent_dispensers/spiders,
+/obj/reagent_dispensers/cleanable/spiders,
 /turf/unsimulated/floor/red,
 /area/owlery/gangzone)
 "cGr" = (
@@ -57052,7 +57052,7 @@
 /turf/unsimulated/floor/yellow,
 /area/owlery/gangzone)
 "cLI" = (
-/obj/reagent_dispensers/ants,
+/obj/reagent_dispensers/cleanable/ants,
 /turf/unsimulated/floor/yellow,
 /area/owlery/gangzone)
 "cLJ" = (
@@ -57654,7 +57654,7 @@
 "cNh" = (
 /obj/item/storage/pill_bottle/cyberpunk,
 /obj/decal/cleanable/dirt,
-/obj/reagent_dispensers/ants,
+/obj/reagent_dispensers/cleanable/ants,
 /turf/unsimulated/floor/yellowblack{
 	dir = 5
 	},
@@ -60448,7 +60448,7 @@
 /obj/decal/cleanable/blood/tracks{
 	icon_state = "gib2"
 	},
-/obj/reagent_dispensers/ants,
+/obj/reagent_dispensers/cleanable/ants,
 /turf/unsimulated/floor/yellow,
 /area/owlery/gangzone)
 "cTb" = (
@@ -67789,7 +67789,8 @@
 /turf/unsimulated/floor/red,
 /area/syndicate_station/battlecruiser)
 "dhQ" = (
-/obj/machinery/bot/medbot/no_camera,
+/obj/table/auto,
+/obj/machinery/defib_mount,
 /turf/unsimulated/floor/red,
 /area/syndicate_station/battlecruiser)
 "dhR" = (
@@ -75406,10 +75407,6 @@
 /obj/item/reagent_containers/food/snacks/zongzi{
 	pixel_y = 4
 	},
-/obj/decal/poster/wallsign/teaparty{
-	desc = "Pre-eliminary signing up for Nanotrasen's newest military vessel NSS Manta has now begun. Reach out to your head of personnel or a local Nanotrasen recruiting officer to find out more about new job oppurtunities aboard NSS Manta!  ... Hold on just a minute, aren't you already there?";
-	pixel_y = 32
-	},
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/flourish)
 "dCN" = (
@@ -82401,10 +82398,6 @@
 /obj/item/clothing/glasses/regular,
 /turf/unsimulated/floor/carpet/grime,
 /area/crypt/sigma/rd)
-"dXK" = (
-/obj/filing_cabinet,
-/turf/unsimulated/floor/carpet/green/fancy/edge/nw,
-/area/centcom/offices/mcterra)
 "dXN" = (
 /obj/table/wood/auto/desk,
 /obj/machinery/light/lamp,
@@ -82503,11 +82496,6 @@
 	icon_state = "floor2"
 	},
 /area/shuttle/merchant_shuttle/diner_centcom)
-"etj" = (
-/obj/table/wood/auto/desk,
-/obj/machinery/light/lamp/green,
-/turf/unsimulated/floor/carpet/green/fancy/edge/north,
-/area/centcom/offices/mcterra)
 "etu" = (
 /obj/machinery/vending/mechanics{
 	pixel_x = 10;
@@ -82731,7 +82719,7 @@
 	name = "Unban Appeal";
 	pixel_y = 8
 	},
-/turf/unsimulated/floor/carpet/green/fancy,
+/turf/unsimulated/floor/wood/two,
 /area/centcom/offices/mrfishstick)
 "fqO" = (
 /obj/filing_cabinet,
@@ -82760,21 +82748,6 @@
 	},
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/thefakeelon)
-"fCL" = (
-/obj/machinery/light/incandescent/warm/very{
-	dir = 1
-	},
-/obj/table/wood/auto/desk,
-/obj/machinery/computer3/luggable{
-	name = "terra's laptop"
-	},
-/turf/unsimulated/floor/carpet/green/fancy/edge/north,
-/area/centcom/offices/mcterra)
-"fGD" = (
-/obj/table/wood/auto/desk,
-/obj/item/lawbook,
-/turf/unsimulated/floor/carpet/green/fancy/edge/ne,
-/area/centcom/offices/mcterra)
 "fKf" = (
 /obj/decal/fakeobjects{
 	anchored = 1;
@@ -82961,6 +82934,13 @@
 	dir = 9
 	},
 /area/ship_interior/cruisertest)
+"gGp" = (
+/obj/stool/chair/office/syndie{
+	dir = 1;
+	name = "terra's chair"
+	},
+/turf/unsimulated/floor/carpet/green/fancy,
+/area/centcom/offices/mcterra)
 "gGM" = (
 /turf/unsimulated/floor/void/channel,
 /area/adventure/channel/teleport)
@@ -83248,6 +83228,9 @@
 	icon_state = "floor3"
 	},
 /area/hospital/samostrel)
+"hUj" = (
+/turf/unsimulated/floor/carpet/green/fancy,
+/area/centcom/offices/mcterra)
 "hVt" = (
 /turf/simulated/wall/auto/shuttle{
 	icon_state = "8"
@@ -83602,6 +83585,9 @@
 	dir = 5
 	},
 /area/hospital/samostrel)
+"jyo" = (
+/turf/unsimulated/floor/carpet/green/fancy/edge/south,
+/area/centcom/offices/mcterra)
 "jCe" = (
 /obj/stool/chair/comfy/shuttle,
 /obj/machinery/light{
@@ -83612,7 +83598,11 @@
 /turf/unsimulated/floor/shuttle,
 /area/shuttle/escape/centcom/cogmap)
 "jEZ" = (
-/turf/unsimulated/floor/carpet/green/fancy/edge/west,
+/obj/filing_cabinet,
+/turf/unsimulated/floor/carpet/green/fancy/edge/nw,
+/area/centcom/offices/mcterra)
+"jIg" = (
+/turf/unsimulated/floor/carpet/green/fancy/edge/east,
 /area/centcom/offices/mcterra)
 "jJx" = (
 /turf/unsimulated/wall{
@@ -83643,6 +83633,10 @@
 	},
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/tarmunora)
+"jNr" = (
+/obj/storage/crate/bin,
+/turf/unsimulated/floor/carpet/green/fancy/edge/se,
+/area/centcom/offices/mcterra)
 "jPy" = (
 /obj/stool/chair/office/syndie{
 	dir = 4;
@@ -83912,6 +83906,10 @@
 	icon_state = "floor2"
 	},
 /area/shuttle/escape/centcom/donut3)
+"kJE" = (
+/obj/machinery/bot/medbot/no_camera,
+/turf/unsimulated/floor/red,
+/area/syndicate_station/battlecruiser)
 "kKt" = (
 /obj/table/wood/auto/desk,
 /obj/item/reagent_containers/food/drinks/cola{
@@ -84151,6 +84149,11 @@
 	icon_state = "floor3"
 	},
 /area/hospital/samostrel)
+"lBm" = (
+/obj/table/wood/auto/desk,
+/obj/item/lawbook,
+/turf/unsimulated/floor/carpet/green/fancy/edge/ne,
+/area/centcom/offices/mcterra)
 "lEt" = (
 /turf/space,
 /turf/unsimulated/floor/plating/scorched,
@@ -84270,6 +84273,10 @@
 /turf/space,
 /turf/unsimulated/floor/carpet/office,
 /area/hospital/samostrel)
+"mje" = (
+/obj/storage/closet/office,
+/turf/unsimulated/floor/wood/two,
+/area/afterlife/bar)
 "mlK" = (
 /turf/space,
 /turf/unsimulated/floor/caution/north,
@@ -84387,6 +84394,9 @@
 /turf/space,
 /turf/unsimulated/floor/engine/caution/north,
 /area/hospital/samostrel)
+"mRs" = (
+/turf/unsimulated/floor/carpet/green/fancy/edge/west,
+/area/centcom/offices/mcterra)
 "mTM" = (
 /obj/table/auto,
 /obj/machinery/light/small/iomoon{
@@ -84537,9 +84547,6 @@
 /obj/suggestion_box,
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/tarmunora)
-"nsm" = (
-/turf/unsimulated/floor/carpet/green/fancy,
-/area/centcom/offices/mcterra)
 "nte" = (
 /turf/unsimulated/floor/setpieces/Azarak/cavefloor/floor2{
 	desc = "It's over Enakai";
@@ -84974,16 +84981,6 @@
 	},
 /turf/unsimulated/floor/wood/two,
 /area/centcom/offices/mrfishstick)
-"oRd" = (
-/obj/stool/chair/office/syndie{
-	dir = 1;
-	name = "terra's chair"
-	},
-/turf/unsimulated/floor/carpet/green/fancy,
-/area/centcom/offices/mcterra)
-"oSl" = (
-/turf/unsimulated/floor/carpet/green/fancy/edge/east,
-/area/centcom/offices/mcterra)
 "oSI" = (
 /obj/decal/fakeobjects/pipe{
 	icon = 'icons/obj/atmospherics/pipes/manifold_pipe.dmi';
@@ -85090,9 +85087,6 @@
 /area/centcom/offices{
 	icon_state = "blue"
 	})
-"puA" = (
-/turf/unsimulated/floor/carpet/green/fancy/edge/south,
-/area/centcom/offices/mcterra)
 "puF" = (
 /obj/decal/fakeobjects/pipe{
 	desc = "It won't budge.";
@@ -85496,6 +85490,11 @@
 /area/centcom/offices{
 	icon_state = "blue"
 	})
+"qOB" = (
+/obj/table/wood/auto/desk,
+/obj/machinery/light/lamp/green,
+/turf/unsimulated/floor/carpet/green/fancy/edge/north,
+/area/centcom/offices/mcterra)
 "qPO" = (
 /obj/machinery/door/airlock/gannets/glass,
 /obj/decal/tile_edge/line/green{
@@ -85537,6 +85536,16 @@
 /turf/space,
 /turf/unsimulated/floor/engine/caution/north,
 /area/hospital/samostrel)
+"qRP" = (
+/obj/machinery/light/incandescent/warm/very{
+	dir = 1
+	},
+/obj/table/wood/auto/desk,
+/obj/machinery/computer3/luggable{
+	name = "terra's laptop"
+	},
+/turf/unsimulated/floor/carpet/green/fancy/edge/north,
+/area/centcom/offices/mcterra)
 "qZX" = (
 /obj/machinery/light/small/floor,
 /turf/unsimulated/floor/shuttle{
@@ -85624,10 +85633,6 @@
 	icon_state = "diagonalWall"
 	},
 /area/hospital/samostrel)
-"rou" = (
-/obj/storage/crate/bin,
-/turf/unsimulated/floor/carpet/green/fancy/edge/se,
-/area/centcom/offices/mcterra)
 "rpG" = (
 /turf/unsimulated/floor/setpieces/rootfloor{
 	icon_state = "rootfloor_2"
@@ -86065,6 +86070,9 @@
 /turf/space,
 /turf/simulated/floor,
 /area/ship_interior/cruisertest)
+"sYB" = (
+/turf/unsimulated/floor/wood/two,
+/area/centcom/offices/thefakeelon)
 "tdA" = (
 /obj/machinery/cruiser_destroyable/cruiser_component_slot/weapon/left,
 /turf/space,
@@ -86544,9 +86552,6 @@
 /area/centcom/offices{
 	icon_state = "blue"
 	})
-"vLQ" = (
-/turf/unsimulated/floor/wood/two,
-/area/centcom/offices/thefakeelon)
 "vNH" = (
 /obj/indestructible/shuttle_corner{
 	dir = 8;
@@ -87065,7 +87070,7 @@
 	desc = "IT HIM, IT REALLY HIM";
 	name = "smol donut"
 	},
-/obj/reagent_dispensers/ants,
+/obj/reagent_dispensers/cleanable/ants,
 /turf/unsimulated/outdoors/grass,
 /area/centcom/outside)
 "yld" = (
@@ -107883,7 +107888,7 @@ cvH
 cvH
 cvH
 cvH
-cwC
+mje
 cwC
 dTz
 cwf
@@ -113387,7 +113392,7 @@ aKf
 dhr
 dhE
 dhQ
-dgx
+kJE
 pNn
 aKf
 cfO
@@ -164820,13 +164825,13 @@ qwW
 hnO
 ius
 dvw
-dXK
 jEZ
+mRs
 dwZ
 dvw
-vLQ
-vLQ
-vLQ
+sYB
+sYB
+sYB
 dvw
 aES
 aES
@@ -165122,13 +165127,13 @@ hnO
 hnO
 hnO
 dvw
-etj
-nsm
-puA
+qOB
+hUj
+jyo
 dvw
-vLQ
-vLQ
-vLQ
+sYB
+sYB
+sYB
 dvw
 aES
 aES
@@ -165424,13 +165429,13 @@ vlp
 lRg
 njW
 dvw
-fCL
-oRd
-puA
+qRP
+gGp
+jyo
 dvw
-vLQ
-vLQ
-vLQ
+sYB
+sYB
+sYB
 dvw
 aES
 aES
@@ -165726,13 +165731,13 @@ qGH
 fov
 oPY
 dvw
-fGD
-oSl
-rou
+lBm
+jIg
+jNr
 dvw
-vLQ
-vLQ
-vLQ
+sYB
+sYB
+sYB
 dvw
 aES
 aES
