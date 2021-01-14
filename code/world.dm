@@ -1212,12 +1212,12 @@ var/f_color_selector_handler/F_Color_Selector
 				var/message = plist["message"]
 				var/message_sender = plist["message_sender"]
 				var/source = plist["source"]
-				var/key = plist["key"]
+				var/comms_key = plist["key"]
 
 				logTheThing("ooc", source, null, "Cross Comms: [message] from [message_sender]")
 				logTheThing("diary", source, null, ": [message] from [message_sender]")
 
-				if(key != config.comms_key) return 0
+				if(comms_key != config.comms_key) return 0
 
 				command_alert(message, "Incomming message from [message_sender]")
 
