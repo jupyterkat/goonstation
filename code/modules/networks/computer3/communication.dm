@@ -191,7 +191,7 @@
 						src.print_text("Broadcasting to all allied stations. Warning: Frivolous use of this communication channel is punishable by bloodline termination.")
 
 						src.print_text("Please type and enter the title of your emergency message:")
-						menu = MENU_TRANSMIT_TITLE
+						menu = MENU_ALLIES_TITLE
 
 					if("help")
 						var/help_text = {"<b>Commands:</b>
@@ -284,7 +284,7 @@
 					menu = MENU_MAIN
 				src.print_text(src.transmit_title)
 				src.print_text("Please type and enter your emergency message:")
-				menu = MENU_TRANSMIT_MESSAGE
+				menu = MENU_ALLIES_MESSAGE
 
 			if(MENU_ALLIES_MESSAGE)
 				menu = MENU_MAIN
