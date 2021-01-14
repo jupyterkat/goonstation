@@ -83,7 +83,7 @@
 	if (!D) //Wire: Fix for runtime error: Cannot read null.type (datum having been deleted)
 		return
 
-	if(istype(D, /datum/configuration) || istype(D, /datum/admins))
+	if((istype(D, /datum/configuration) || istype(D, /datum/admins)) && src.holder.level != LEVEL_HOST)
 		boutput(src, "<span class='alert'>YEAH... no....</span>")
 		src.audit(AUDIT_ACCESS_DENIED, "tried to View-Variables a forbidden type([D.type])")
 		return
