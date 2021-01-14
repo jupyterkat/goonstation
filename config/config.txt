@@ -53,6 +53,11 @@ PLAYER_NOTES_AUTH f0729595a08e6b03484d3d2c2b5c76a6
 #IRCBOT_API http://localhost
 #IRCBOT_IP http://localhost
 
+# crosscomms - we can hijack the existing and unused servers list for this
+COMMS_KEY comms_key
+COMMS_NAME AusGoon
+SERVERS byond://localhost:2337 byond://localhost:2338
+
 # log OOC channel
 LOG_OOC
 

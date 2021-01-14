@@ -1205,6 +1205,22 @@ var/f_color_selector_handler/F_Color_Selector
 
 				return 0
 
+			// Comms stuff
+			if("Comms_Console")
+				if(!plist["message_sender"] || !plist["message"] || !plist["source"] || !plist["key"]) return 0
+
+				var/message = plist["message"]
+				var/message_sender = plist["message_sender"]
+				var/source = plist["source"]
+				var/key = plist["key"]
+
+				logTheThing("ooc", source, null, "Cross Comms: [message] from [message_sender]")
+				logTheThing("diary", source, null, ": [message] from [message_sender]")
+
+				if(key != config.comms_key) return 0
+
+				command_alert(message, "Incomming message from [message_sender]")
+
 			if("ooc")
 				if (!plist["nick"] || !plist["msg"]) return 0
 

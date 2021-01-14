@@ -69,6 +69,10 @@
 	var/ircbot_api = null
 	var/ircbot_ip = null
 
+	// Comms stuff
+	var/comms_key = null
+	var/comms_name = null
+
 	//External server configuration (for central bans etc)
 	var/goonhub_api_version = 0
 	var/goonhub_api_endpoint = null
@@ -299,6 +303,11 @@
 				config.ircbot_api = trim(value)
 			if ("ircbot_ip")
 				config.ircbot_ip = trim(value)
+
+			if ("comms_key")
+				config.comms_key = trim(value)
+			if ("comms_name")
+				config.comms_name = trim(value)
 
 			if ("goonhub_parser_url")
 				config.goonhub_parser_url = trim(value)
