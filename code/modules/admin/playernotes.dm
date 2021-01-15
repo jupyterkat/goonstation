@@ -14,7 +14,7 @@
 		return
 
 	var/list/data = list(
-		"auth" = config.player_notes_auth,
+		"auth" = md5(config.player_notes_auth),
 		"action" = "get",
 		"ckey" = player
 	)
@@ -52,7 +52,7 @@
 		return
 
 	var/list/data = list(
-		"auth" = config.player_notes_auth,
+		"auth" = md5(config.player_notes_auth),
 		"action" = "add",
 		"server" = serverKey,
 		"server_id" = config.server_id,
@@ -77,7 +77,7 @@
 		return
 
 	var/list/data = list(
-		"auth" = config.player_notes_auth,
+		"auth" = md5(config.player_notes_auth),
 		"action" = "delete",
 		"id" = id
 	)
