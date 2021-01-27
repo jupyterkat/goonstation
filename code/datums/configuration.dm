@@ -76,6 +76,7 @@
 	//External server configuration (for central bans etc)
 	var/goonhub_api_version = 0
 	var/goonhub_api_endpoint = null
+	var/goonhub_api_secure_endpoint = null
 	var/goonhub_api_ip = null
 	var/goonhub_api_token = null
 	var/goonhub_api_web_token = null
@@ -321,6 +322,8 @@
 				config.goonhub_api_version = text2num(value)
 			if ("goonhub_api_endpoint")
 				config.goonhub_api_endpoint = trim(value)
+			if ("goonhub_api_secure_endpoint")
+				config.goonhub_api_secure_endpoint = trim(value)
 			if ("goonhub_api_ip")
 				config.goonhub_api_ip = trim(value)
 			if ("goonhub_api_token")
