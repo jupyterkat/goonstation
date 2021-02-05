@@ -403,7 +403,7 @@ var/f_color_selector_handler/F_Color_Selector
 	// Load in the current commit SHA from TGS...
 	if(TgsAvailable())
 		var/datum/tgs_revision_information/rev = TgsRevision()
-		vcs_revision = rev.commit
+		vcs_revision = copytext(rev.commit, 1, 10) // take short commit sha
 
 	tick_lag = MIN_TICKLAG//0.4//0.25
 //	loop_checks = 0
