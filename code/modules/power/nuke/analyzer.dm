@@ -5,10 +5,10 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Nuclear Material Analyzer</title>
-    <link rel="stylesheet" type="text/css" href="[config.cdn]/css/bootstrap.min.css?serverrev=16182" />
-    <link rel="stylesheet" type="text/css" href="[config.cdn]/css/bootstrap-responsive.min.css?serverrev=16182" />
-    <script type="text/javascript" src="[config.cdn]/js/jquery.min.js?serverrev=16182"></script>
-    <script type="text/javascript" src="[config.cdn]/js/jquery.migrate.js?serverrev=16182"></script>
+    <link rel="stylesheet" type="text/css" href="[config.cdn]/[vcs_revision]/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="[config.cdn]/[vcs_revision]/css/bootstrap-responsive.min.css" />
+    <script type="text/javascript" src="[config.cdn]/[vcs_revision]/js/jquery.min.js"></script>
+    <script type="text/javascript" src="[config.cdn]/[vcs_revision]/js/jquery.migrate.js"></script>
     <style type="text/css">
         body {
             background-color: #170F0D;
@@ -179,8 +179,8 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="[config.cdn]/js/bootstrap.min.js?serverrev=16182"></script>
-    <script type="text/javascript" src="[config.cdn]/js/jsviews.min.js?serverrev=16182"></script>
+    <script type="text/javascript" src="[config.cdn]/[vcs_revision]/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="[config.cdn]/[vcs_revision]/js/jsviews.min.js"></script>
 
 	<div id="stats_header"><span class="nav_active">nuclear material analysis computer</span></div>
 

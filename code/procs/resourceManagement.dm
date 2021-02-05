@@ -8,7 +8,7 @@
 /proc/resource(file, group)
 	if (!file) return
 	if (cdn)
-		. = "[cdn]/[file]?serverrev=[vcs_revision]"
+		. = "[cdn]/[vcs_revision]/[file]"
 	else
 		if (findtext(file, "{{resource")) //Got here via the dumb regex proc (local only)
 			file = group
@@ -36,14 +36,23 @@
 
 			//Actually get the file contents from the CDN
 			var/datum/http_request/request = new()
-			request.prepare(RUSTG_HTTP_METHOD_GET, "[cdn]/[path]?serverrev=[vcs_revision]", "", "")
+			request.prepare(RUSTG_HTTP_METHOD_GET, "[cdn]/[vcs_revision]/[path]", "", "")
 			request.begin_async()
 			UNTIL(request.is_complete())
 			var/datum/http_response/response = request.into_response()
 
 			if (response.errored || !response.body)
-				Z_LOG_ERROR("Resource/Grab", "[path] - failed to get from CDN")
-				CRASH("CDN DEBUG: No file found for path: [path]")
+				// Failed to get CDN files based on revision. Try to get the latest files as a last ditch effort.
+				// Some incompatible JS for chem dispensers is objectively better than every interface breaking.
+				request = new()
+				request.prepare(RUSTG_HTTP_METHOD_GET, "[cdn]/latest/[path]", "", "")
+				request.begin_async()
+				UNTIL(request.is_complete())
+				response = request.into_response()
+
+				if (response.errored || !response.body)
+					Z_LOG_ERROR("Resource/Grab", "[path] - failed to get from CDN")
+					CRASH("CDN DEBUG: No file found for path: [path]")
 
 			file = response.body
 
