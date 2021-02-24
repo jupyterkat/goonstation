@@ -318,8 +318,8 @@
 
 				for(var/svr in config.servers)
 					world.Export("[svr]?[list2params(message)]")
-
-				logTheThing("admin", usr, null,  "send a message to allied stations (title: [src.transmit_title], message: [transmit_message])")
+				command_alert(transmit_message, "Outgoing message to allied stations")
+				logTheThing("admin", usr, null,  "sent a message to allied stations (title: [src.transmit_title], message: [transmit_message])")
 				logTheThing("diary", usr, null, "sent a message to allied stations (title: [src.transmit_title], message: [transmit_message])", "admin")
 
 
