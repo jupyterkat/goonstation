@@ -73,6 +73,7 @@
 	//External server configuration (for central bans etc)
 	var/opengoon_api_version = 0
 	var/opengoon_api_endpoint = null
+	var/opengoon_api_secure_endpoint = null
 	var/opengoon_api_ip = null
 	var/opengoon_api_token = null
 	var/opengoon_api_web_token = null
@@ -342,6 +343,8 @@
 				config.opengoon_api_version = text2num(value)
 			if ("opengoon_api_endpoint")
 				config.opengoon_api_endpoint = trim(value)
+			if ("opengoon_api_secure_endpoint")
+				config.opengoon_api_secure_endpoint = trim(value)
 			if ("opengoon_api_ip")
 				config.opengoon_api_ip = trim(value)
 			if ("opengoon_api_token")

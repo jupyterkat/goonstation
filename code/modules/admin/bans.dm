@@ -608,20 +608,6 @@ var/global/list/playersSeen = list()
 		alert("You need to be at least a Secondary Administrator to add ban exceptions.")
 */
 
-/////////////////////////
-// BAN PANEL SECURITY PROCS (OpenGoon Module)
-/////////////////////////
-
-///Issue banpanel JWT
-/datum/admins/proc/issue_token()//Bypass
-	var/list/apipayload = list(
-		"servertag" = config.server_id,
-		"administrator" = owner.ckey,
-		"data_version" = config.opengoon_api_version
-	)
-	var/response = apiHandler.queryAPI("usec/auth/get", apipayload, TRUE)
-	return response["token"]
-
 
 
 /////////////////////////
@@ -630,6 +616,18 @@ var/global/list/playersSeen = list()
 
 
 /datum/admins/proc/banPanel()
+	// Get the JWT token
+	var/list/response
+	try
+		response = apiHandler.queryAPI("jwt/new", list("ckey" = usr.ckey), forceResponse = 1)
+	catch ()
+		boutput(usr, "<span class='alert'>Failed to get a token from the API.</span>")
+		return
+
+	if(!response["token"])
+		boutput(usr, "<span class='alert'>API response had no token for us.</span>")
+		return
+
 	var/CMinutes = (world.realtime / 10) / 60
 	var/bansHtml = grabResource("html/admin/banPanel.html")
 	var/windowName = "banPanel"
@@ -637,11 +635,9 @@ var/global/list/playersSeen = list()
 	bansHtml = replacetext(bansHtml, "null /* ref_src */", "'\ref[src]'")
 	bansHtml = replacetext(bansHtml, "null /* cminutes */", "[CMinutes]")
 	bansHtml = replacetext(bansHtml, "null /* api_data_params */", "'data_server=[serverKey]&data_id=[config.server_id]&data_version=[config.opengoon_api_version]'")
+	bansHtml = replacetext(bansHtml, "null /* api endpoint */", "'[config.opengoon_api_secure_endpoint]'")
 	if (centralConn)
-		bansHtml = replacetext(bansHtml, "null /* api_key */", "'[issue_token()]'")
-		bansHtml = replacetext(bansHtml, "null /* api_baseroute */", "'[config.banpanel_base]'")
-		bansHtml = replacetext(bansHtml, "null /* api_getroute */", "'[config.banpanel_get]'")
-		bansHtml = replacetext(bansHtml, "null /* api_prevroute */", "'[config.banpanel_prev]'")
+		bansHtml = replacetext(bansHtml, "null /* api_key */", "'[response["token"]]'")
 	usr << browse(bansHtml,"window=[windowName];size=1080x500")
 
 
