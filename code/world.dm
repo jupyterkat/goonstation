@@ -24,7 +24,7 @@
 
 	hub = "Exadv1.SpaceStation13"
 	hub_password = "kMZy3U5jJHSiBQjr"
-	name = "Beestation Clover"
+	name = "AusGoon"
 
 	visibility = 1
 
@@ -1200,7 +1200,7 @@ var/f_color_selector_handler/F_Color_Selector
 							return 1
 #endif
 
-		if (addr != config.ircbot_ip && addr != config.cloverfield_api_ip && addr != config.cloverfield2_hostname)
+		if (addr != config.ircbot_ip && addr != config.opengoon_api_ip && addr != config.opengoon2_hostname)
 			return 0 //ip filtering
 
 		var/list/plist = params2list(T)
@@ -1288,7 +1288,7 @@ var/f_color_selector_handler/F_Color_Selector
 
 				var/server_name = plist["server_name"]
 				if (!server_name)
-					server_name = "CLOVER-???"
+					server_name = "AUSGOON-???"
 				var/nick = plist["nick"]
 				var/msg = plist["msg"]
 				msg = trim(copytext(sanitize(msg), 1, MAX_MESSAGE_LEN))
@@ -1473,9 +1473,9 @@ var/f_color_selector_handler/F_Color_Selector
 					logTheThing("debug", null, null, "<b>API Error (Temp):</b> Didnt get proc.")
 					return 0
 
-				if (addr != config.cloverfield_api_ip) return 0 //ip filtering
+				if (addr != config.opengoon_api_ip) return 0 //ip filtering
 				var/auth = plist["auth"]
-				if (auth != sha256_string(config.cloverfield_api_token)) return 0 //really bad md5 token security
+				if (auth != sha256_string(config.opengoon_api_token)) return 0 //really bad md5 token security
 				var/theDatum = plist["datum"] ? plist["datum"] : null
 				var/theProc = "/proc/[plist["proc"]]"
 
@@ -1558,7 +1558,7 @@ var/f_color_selector_handler/F_Color_Selector
 				var/ircmsg[] = new()
 				ircmsg["major"] = ci_dm_version_major
 				ircmsg["minor"] = ci_dm_version_minor
-				ircmsg["cloverfield_api"] = config.cloverfield_api_version ? config.cloverfield_api_version : 0
+				ircmsg["opengoon_api"] = config.opengoon_api_version ? config.opengoon_api_version : 0
 				return ircbot.response(ircmsg)
 
 			if ("youtube")

@@ -23,7 +23,7 @@ module.exports = function (grunt) {
   };
 
   var rev = grunt.file.read('revision') || '1';
-  var cdn = 'http://clover.rsc.beestation13.buzz/cdn';
+  var cdn = 'http://rsc.austation.net/goon-cdn';
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -122,8 +122,8 @@ module.exports = function (grunt) {
         options: {
           replacements: [{
             pattern: /\{\{resource\(\"(.*?)\"\)\}\}/ig,
-            //replacement: cdn + '/$1' + '?cdnrev=' + rev
-            replacement: cdn + '/$1'
+            replacement: cdn + '/$1' + '?cdnrev=' + rev
+            //replacement: cdn + '/$1'
           }]
         }
       },
@@ -137,8 +137,8 @@ module.exports = function (grunt) {
         options: {
           replacements: [{
             pattern: /\{\{resource\(\"(.*?)\"\)\}\}/ig,
-            //replacement: cdn + '/$1' + '?cdnrev=' + rev
-            replacement: cdn + '/$1'
+            replacement: cdn + '/$1' + '?cdnrev=' + rev
+            //replacement: cdn + '/$1'
           }]
         }
       },
@@ -152,8 +152,8 @@ module.exports = function (grunt) {
         options: {
           replacements: [{
             pattern: /\{\{resource\(\"(.*?)\"\)\}\}/ig,
-            //replacement: cdn + '/$1' + '?cdnrev=' + rev
-            replacement: cdn + '/$1'
+            replacement: cdn + '/$1' + '?cdnrev=' + rev
+            //replacement: cdn + '/$1'
           }]
         }
       }
@@ -259,7 +259,7 @@ module.exports = function (grunt) {
     'clean',
     'string-replace:css',
     //'sass',
-    'imagemin',
+    //'imagemin',
     'svgmin',
     'postcss',
     'string-replace:js',

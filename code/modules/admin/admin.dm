@@ -4091,7 +4091,7 @@ var/global/noir = 0
 					<A href='?src=\ref[src];action=secretsdebug;type=emshuttle'>Emergency Shuttle</A> |
 					<A href='?src=\ref[src];action=secretsdebug;type=datacore'>Data Core</A> |
 					<A href='?src=\ref[src];action=secretsdebug;type=miningcontrols'>Mining Controls</A> |
-					<A href='?src=\ref[src];action=secretsdebug;type=cloverfield'>Cloverfield</A> |
+					<A href='?src=\ref[src];action=secretsdebug;type=opengoon'>OpenGoon</A> |
 					<A href='?src=\ref[src];action=secretsdebug;type=mapsettings'>Map Settings</A> |
 					<A href='?src=\ref[src];action=secretsdebug;type=ghostnotifications'>Ghost Notifications</A> |
 					<A href='?src=\ref[src];action=secretsdebug;type=overlays'>Overlays</A>
@@ -4729,7 +4729,7 @@ var/global/noir = 0
 
 /datum/admins/proc/show_chatbans(var/client/C)//do not use this as an example of how to write DM please.
 	if( !C.cloud_available() )
-		alert( "Failed to communicate to Cloverfield." )
+		alert( "Failed to communicate to OpenGoon." )
 		return
 	var/built = {"<title>Chat Bans (todo: prettify)</title>"}
 	if(C.cloud_get( "adminhelp_banner" ))

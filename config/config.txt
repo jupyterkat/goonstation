@@ -107,10 +107,10 @@ TUTORIAL_URL https://mini.xkeeper.net
 #YOUTUBE_AUDIO_URL http://yt.goonhub.com/index.php
 
 # Self-explanatory website URLs
-GITHUB_REPO_URL https://github.com/BeeStation/Clover
-FORUMS_URL https://forums.beestation13.com/
+GITHUB_REPO_URL https://github.com/austation/goonstation
+FORUMS_URL https://austation.net/
 WIKI_URL https://wiki.ss13.co/Main_Page
-RULES_URL https://wiki.beestation13.com/view/Rules
+RULES_URL https://austation.net/threads/server-rules.81/#post-369
 MAP_WEBVIEW_URL http://goonhub.com/maps/cogmap
 
 # Uncomment with a valid Org/Repo value to enable gitreports (https://gitreports.com)

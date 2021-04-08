@@ -1,21 +1,21 @@
-# ![](https://i.imgur.com/mvQFRZm.png) BeeStation Clover
+# ![](https://i.imgur.com/mvQFRZm.png) AusGoon
 
 ![contains technical debt](https://forthebadge.com/images/badges/contains-technical-debt.svg) ![made in byond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)
 
 <table>
 <tr><td align="right" >Master Status: </td>
-<td><img valign="sub" src="https://github.com/BeeStation/Clover/workflows/Beepsky/badge.svg?branch=master"/></td></tr>
+<td><img valign="sub" src="https://github.com/austation/goonstation/workflows/Beepsky/badge.svg?branch=master"/></td></tr>
 </table>
 
-**Website:**  https://beestation13.com
+**Website:**  https://austation.net
 
-**Forums:** https://forums.beestation13.com
+**Forums:** https://austation.net
 
 **Wiki:** https://wiki.ss13.co
 
-**Discord:** https://discord.com/invite/z9ttAvA
+**Discord:** https://discord.com/invite/ZTGQAqB
 
-This is the codebase for BeeStation's fork of [Goonstation](https://github.com/goonstation/goonstation).
+This is the codebase for AuStation's fork (AusGoon) of [Goonstation](https://github.com/goonstation/goonstation).
 
 [<img src=".github/assets/goonhub.png" alt="Goonhub" width="150" align="left">](https://goonhub.com)
 Goonhub is the premier place for locating statistics, data about rounds, detailed game maps, and all other links pertaining to Goonstation!
@@ -37,4 +37,4 @@ To contribute maps to the game, please follow our mapping guidelines! This detai
 
 All code, contributions, and assets are licensed under [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/3.0/) unless otherwise noted. See LICENSE for more details.
 
-**Important:** This means that this code cannot be ported to codebases such as BeeStation or /tg/station. If you wish to port a specific feature, you must get the developer(s) to sublicense it to you under a license like AGPLv3. This also applies in the opposite direction for features ported from other codebases.
+**Important:** This means that this code cannot be ported to codebases such as austation or /tg/station. If you wish to port a specific feature, you must get the developer(s) to sublicense it to you under a license like AGPLv3. This also applies in the opposite direction for features ported from other codebases.

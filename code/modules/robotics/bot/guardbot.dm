@@ -3446,7 +3446,7 @@
 						src.protected = C
 						src.desired_emotion = GUARDING_EMOTION
 						C.unlock_medal("Ol' buddy ol' pal", 1)
-						src.buddy_is_dork = (C.client && C.client.IsByondMember()) //TODO uncomment this code and apply it to beestation patrons -francinum
+						src.buddy_is_dork = (C.client && C.client.IsByondMember())
 						//if (buddy_is_dork && prob(50))
 							//master.speak(pick("I am here to protect...Oh, it's <i>you</i>.", "I have been instructed to guard you. Welp.", "You are now under guard.  I guess."))
 						master.speak(pick("I am here to protect you.","I have been instructed to guard you.","You are now under guard.","Come with me if you want to live!"))

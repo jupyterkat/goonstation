@@ -399,7 +399,7 @@ var/global
 	diary = null
 	diary_name = null
 	hublog = null
-	game_version = "BeeStation 13 - Goon Edition (r" + vcs_revision + ")"
+	game_version = "AusGoon (r" + vcs_revision + ")"
 
 	master_mode = "traitor"
 

@@ -285,7 +285,7 @@ var/global/current_state = GAME_STATE_WORLD_INIT
 
 			if (player.ready)
 				if (player.mind && player.mind.ckey)
-					//Record player participation in this round via the cloverfield API
+					//Record player participation in this round via the opengoon API
 					participationRecorder.record(player.mind.ckey)
 
 				if (player.mind && player.mind.assigned_role == "AI")
@@ -472,7 +472,7 @@ var/global/current_state = GAME_STATE_WORLD_INIT
 				ticker.round_elapsed_ticks += elapsed
 
 /datum/controller/gameticker/proc/declare_completion()
-	//End of round statistic collection for cloverfield
+	//End of round statistic collection for opengoon
 
 	//logTheThing("debug", null, null, "Zamujasa: [world.timeofday] statlog_traitors")
 	statlog_traitors()
