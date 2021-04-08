@@ -171,7 +171,7 @@ var/global/awarded_xp = 0
 			"type" = field_name
 			) //Debug might be a valid route for forcing a full xp dump. Not sure. Not implimenting it for now -Franc
 
-		var/list/response = apiHandler.queryAPI("clover/xptrak/get", request, TRUE)
+		var/list/response = apiHandler.queryAPI("xptrak/get", request, TRUE)
 
 		if(isnull(response) || response.len == 0)
 			return null
@@ -205,7 +205,7 @@ var/global/awarded_xp = 0
 		"type" = field_name,
 		"val" = field_value)
 
-	apiHandler.queryAPI("clover/xptrak/set",request)
+	apiHandler.queryAPI("xptrak/set",request)
 	//The original version of this code returned something, but this return value seemed to never actually be used
 	//So I'm just going to ignore it and treat it as a pure void proc -Francinum
 	return
