@@ -66,6 +66,10 @@
 	var/ircbot_api = null
 	var/ircbot_ip = null
 
+	// Comms stuff
+	var/comms_key = null
+	var/comms_name = null
+
 	//External server configuration (for central bans etc)
 	var/opengoon_api_version = 0
 	var/opengoon_api_endpoint = null
@@ -323,11 +327,6 @@
 			if ("ircbot_ip")
 				config.ircbot_ip = trim(value)
 
-			if ("opengoon_parser_url")
-				config.opengoon_parser_url = trim(value)
-			if ("opengoon_parser_key")
-				config.opengoon_parser_key = trim(value)
-
 			if ("ticklag")
 				world.tick_lag = text2num(value)
 
@@ -341,6 +340,11 @@
 				config.opengoon_api_ip = trim(value)
 			if ("opengoon_api_token")
 				config.opengoon_api_token = trim(value)
+
+			if ("comms_key")
+				config.comms_key = trim(value)
+			if ("comms_name")
+				config.comms_name = trim(value)
 
 			if ("youtube_enabled")
 				config.youtube_enabled = 1
