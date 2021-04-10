@@ -150,7 +150,7 @@ ALLOW_AI
 # Disable respawning
 NORESPAWN
 
-CDN http://rsc.austation.net/goon-cdn
+#CDN http://rsc.austation.net/goon-cdn
 
 # Resource cache toggle
 #DISABLE_RESOURCE_CACHE
