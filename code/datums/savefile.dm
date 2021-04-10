@@ -389,12 +389,12 @@
 		if (IsGuestKey(user.key))
 			return 0
 
-		if(!config.cloudsave_url)
+		if(!config.opengoon_api_endpoint)
 			logTheThing( "debug", src, null, "no cloudsave url set" )
 			return "Cloudsave Disabled."
 		// Fetch via HTTP from opengoon
 		var/datum/http_request/request = new()
-		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.cloudsave_url]?get&ckey=[user.ckey]&name=[url_encode(name)]&api_key=[config.ircbot_api]", "", "")
+		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/api/cloudsave/?get&ckey=[user.ckey]&name=[url_encode(name)]&api_key=[config.ircbot_api]", "", "")
 		request.begin_async()
 		UNTIL(request.is_complete())
 		var/datum/http_response/response = request.into_response()
@@ -416,7 +416,7 @@
 			return "Failed to retrieve cloud data, try rejoining."
 		if (IsGuestKey( user.key ))
 			return 0
-		if(!config.cloudsave_url)
+		if(!config.opengoon_api_endpoint)
 			logTheThing( "debug", src, null, "no cloudsave url set" )
 			return "Cloudsave Disabled."
 
@@ -425,7 +425,7 @@
 
 		// Fetch via HTTP from opengoon
 		var/datum/http_request/request = new()
-		request.prepare(RUSTG_HTTP_METHOD_POST, "[config.cloudsave_url]?put&ckey=[user.ckey]&name=[url_encode(name)]&api_key=[config.ircbot_api]&data=[url_encode(exported)]", "", "")
+		request.prepare(RUSTG_HTTP_METHOD_POST, "[config.opengoon_api_endpoint]/api/cloudsave/?put&ckey=[user.ckey]&name=[url_encode(name)]&api_key=[config.ircbot_api]&data=[url_encode(exported)]", "", "")
 		request.begin_async()
 		UNTIL(request.is_complete())
 		var/datum/http_response/response = request.into_response()
@@ -444,7 +444,7 @@
 
 		// Request deletion via HTTP from opengoon
 		var/datum/http_request/request = new()
-		request.prepare(RUSTG_HTTP_METHOD_DELETE, "[config.cloudsave_url]?delete&ckey=[user.ckey]&name=[url_encode(name)]&api_key=[config.ircbot_api]", "", "")
+		request.prepare(RUSTG_HTTP_METHOD_DELETE, "[config.opengoon_api_endpoint]/api/cloudsave/?delete&ckey=[user.ckey]&name=[url_encode(name)]&api_key=[config.ircbot_api]", "", "")
 		request.begin_async()
 		UNTIL(request.is_complete())
 		var/datum/http_response/response = request.into_response()

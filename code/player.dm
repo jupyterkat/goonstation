@@ -119,10 +119,10 @@
 		clouddata[key] = "[value]"
 
 		// Via rust-g HTTP
-		if(!config.cloudsave_url)
+		if(!config.opengoon_api_endpoint)
 			logTheThing( "debug", src, null, "<b>CloudData/Francinum:</b> no cloudsave url set" )
 		var/datum/http_request/request = new() //If it fails, oh well...
-		request.prepare(RUSTG_HTTP_METHOD_POST, "[config.cloudsave_url]?dataput&api_key=[config.ircbot_api]&ckey=[ckey]&key=[url_encode(key)]&value=[url_encode(clouddata[key])]", "", "")
+		request.prepare(RUSTG_HTTP_METHOD_POST, "[config.opengoon_api_endpoint]/api/cloudsave/?dataput&api_key=[config.ircbot_api]&ckey=[ckey]&key=[url_encode(key)]&value=[url_encode(clouddata[key])]", "", "")
 		request.begin_async()
 		return TRUE // I guess
 
@@ -139,7 +139,7 @@
 		if(!cdn)
 			return
 		var/datum/http_request/request = new()
-		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.cloudsave_url]?list&ckey=[ckey]&api_key=[config.ircbot_api]", "", "")
+		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/api/cloudsave/?list&ckey=[ckey]&api_key=[config.ircbot_api]", "", "")
 		request.begin_async()
 		UNTIL(request.is_complete())
 		var/datum/http_response/response = request.into_response()
