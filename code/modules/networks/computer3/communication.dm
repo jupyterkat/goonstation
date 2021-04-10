@@ -3,6 +3,8 @@
 #define MENU_CALL 1
 #define MENU_TRANSMIT_TITLE 2
 #define MENU_TRANSMIT_MESSAGE 3
+#define MENU_ALLIES_TITLE 4
+#define MENU_ALLIES_MESSAGE 5
 
 /datum/computer/file/terminal_program/communications
 	name = "COMMaster"
@@ -60,7 +62,8 @@
 		<br>(Call) to call shuttle.
 		<br>(Recall) to recall shuttle.
 		<br>(Logs) to view logs of potentially lost cargo.
-		<br>(Transmit) to send a message to Central Command
+		<br>(Transmit) to send a message to Central Command.
+		<br>(Allies) to broadcast a message to all allied stations.
 		<br>(Clear) to clear the screen.
 		<br>(Quit) to exit COMMaster."}
 		src.print_text(intro_text)
@@ -172,6 +175,24 @@
 						src.print_text("Please type and enter the title of your emergency message:")
 						menu = MENU_TRANSMIT_TITLE
 
+					if("allies")
+						if(!src.pnet_card)
+							src.print_text("<b>Error:</b> Network card required.")
+							src.master.add_fingerprint(usr)
+							return
+
+						if(!src.comm_net_id)
+							src.detect_comm_dish()
+							sleep(0.8 SECONDS)
+							if (!src.comm_net_id)
+								src.print_text("<b>Error:</b> Unable to detect comm dish.  Please check network cabling.")
+								return
+
+						src.print_text("Broadcasting to all allied stations. Warning: Frivolous use of this communication channel is punishable by bloodline termination.")
+
+						src.print_text("Please type and enter the title of your emergency message:")
+						menu = MENU_ALLIES_TITLE
+
 					if("help")
 						var/help_text = {"<b>Commands:</b>
 						<br>(Status) to view current status.
@@ -255,6 +276,51 @@
 				generate_signal(comm_net_id, "command", "transmit", "acc_code", netpass_heads, "title", src.transmit_title, "data", transmit_message, "user", usr.real_name)
 				logTheThing("admin", usr, null,  "attempted to contanct CentCom (title: [src.transmit_title], message: [transmit_message])")
 				logTheThing("diary", usr, null, "attempted to contanct CentCom (title: [src.transmit_title], message: [transmit_message])", "admin")
+
+			if(MENU_ALLIES_TITLE)
+				src.transmit_title = copytext(html_decode(trim(strip_html(html_decode(text)))), 1, 140)
+				if(!src.transmit_title)
+					src.print_text("Transmission cancelled.")
+					menu = MENU_MAIN
+				src.print_text(src.transmit_title)
+				src.print_text("Please type and enter your emergency message:")
+				menu = MENU_ALLIES_MESSAGE
+
+			if(MENU_ALLIES_MESSAGE)
+				menu = MENU_MAIN
+
+				if(!src.pnet_card)
+					src.print_text("<b>Error:</b> Network card required.")
+					src.master.add_fingerprint(usr)
+					return
+
+				if(!src.comm_net_id)
+					src.detect_comm_dish()
+					sleep(0.8 SECONDS)
+					if (!src.comm_net_id)
+						src.print_text("<b>Error:</b> Unable to detect comm dish.  Please check network cabling.")
+						return
+
+				var/transmit_message = html_decode(trim(strip_html(html_decode(text))))
+				if(!transmit_message)
+					src.print_text("Transmission cancelled.")
+					return
+				src.print_text(transmit_message)
+
+				// Funny broadcast stuff
+				var/list/message = list()
+				message["key"] = config.comms_key
+				message["message"] = transmit_message
+				message["message_sender"] = station_name()
+				message["source"] = config.comms_name
+				message["type"] = "Comms_Console"
+				message += "Comms_Console"
+
+				for(var/svr in config.serverhop_servers)
+					world.Export("[config.serverhop_servers[svr]]?[list2params(message)]")
+				command_alert(transmit_message, "Outgoing message to allied stations")
+				logTheThing("admin", usr, null,  "sent a message to allied stations (title: [src.transmit_title], message: [transmit_message])")
+				logTheThing("diary", usr, null, "sent a message to allied stations (title: [src.transmit_title], message: [transmit_message])", "admin")
 
 
 		src.master.add_fingerprint(usr)
