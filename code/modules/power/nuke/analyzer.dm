@@ -1,3 +1,4 @@
+// Terra: Actually fuck you goon
 /obj/machinery/power/nuke_analyzer
 	var/html = {"<!doctype html>
 <html>
@@ -5,10 +6,10 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Nuclear Material Analyzer</title>
-    <link rel="stylesheet" type="text/css" href="http://cdn.goonhub.com/css/bootstrap.min.css?serverrev=16182" />
-    <link rel="stylesheet" type="text/css" href="http://cdn.goonhub.com/css/bootstrap-responsive.min.css?serverrev=16182" />
-    <script type="text/javascript" src="http://cdn.goonhub.com/js/jquery.min.js?serverrev=16182"></script>
-    <script type="text/javascript" src="http://cdn.goonhub.com/js/jquery.migrate.js?serverrev=16182"></script>
+    <link rel="stylesheet" type="text/css" href="[resource("css/bootstrap.min.css")]" />
+    <link rel="stylesheet" type="text/css" href="[resource("css/bootstrap-responsive.min.css")]" />
+    <script type="text/javascript" src="[resource("js/jquery.min.js")]"></script>
+    <script type="text/javascript" src="[resource("js/jquery.migrate.js")]"></script>
     <style type="text/css">
         body {
             background-color: #170F0D;
@@ -179,8 +180,8 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="http://cdn.goonhub.com/js/bootstrap.min.js?serverrev=16182"></script>
-    <script type="text/javascript" src="http://cdn.goonhub.com/js/jsviews.min.js?serverrev=16182"></script>
+    <script type="text/javascript" src="[resource("js/bootstrap.min.js")]"></script>
+    <script type="text/javascript" src="[resource("js/jsviews.min.js")]"></script>
 
 	<div id="stats_header"><span class="nav_active">nuclear material analysis computer</span></div>
 

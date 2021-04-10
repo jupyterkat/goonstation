@@ -225,11 +225,8 @@ var/global/admin_sound_channel = 1014 //Ranges from 1014 to 1024
 		src.verbs += /client/verb/stop_all_sounds
 
 /client/proc/play_youtube_audio()
-	if(!config.youtube_audio_url)
+	if(!config.youtube_enabled)
 		alert("Youtube audio is disabled in the config.")
-		return 0
-	if (!config.youtube_audio_key)
-		alert("You don't have access to the youtube audio converter")
 		return 0
 
 	var/video = input("Input the Youtube video information\nEither the full URL e.g. https://www.youtube.com/watch?v=145RCdUwAxM\nOr just the video ID e.g. 145RCdUwAxM", "Play Youtube Audio") as null|text
@@ -238,7 +235,7 @@ var/global/admin_sound_channel = 1014 //Ranges from 1014 to 1024
 
 	// Fetch via HTTP from opengoon
 	var/datum/http_request/request = new()
-	request.prepare(RUSTG_HTTP_METHOD_POST, "[config.youtube_audio_url]?server=[config.server_id]&key=[src.key]&video=[video]&auth=[config.youtube_audio_key]", "", "")
+	request.prepare(RUSTG_HTTP_METHOD_POST, "[config.opengoon_api_endpoint]/youtube/get/?server=[config.server_key]&key=[src.key]&video=[video]&auth=[config.opengoon_api_token]", "", "")
 	request.begin_async()
 	UNTIL(request.is_complete())
 	var/datum/http_response/response = request.into_response()

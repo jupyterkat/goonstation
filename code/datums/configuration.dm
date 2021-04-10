@@ -56,10 +56,6 @@
 	var/sql_password = null
 	var/sql_database = null
 
-	// Player notes
-	var/player_notes_baseurl = "http://playernotes.opengoon.com"
-	var/player_notes_auth = null
-
 	// Server list for cross-bans and other stuff
 	var/list/servers = list()
 	var/crossbans = 0
@@ -76,13 +72,12 @@
 	var/opengoon_api_secure_endpoint = null
 	var/opengoon_api_ip = null
 	var/opengoon_api_token = null
-	var/opengoon_api_web_token = null
 
-	var/cloudsave_url = null
+	var/youtube_enabled = 0
+
 	var/weblog_viewer_url = null
 	var/tutorial_url = null
 	var/dectalk_url = null
-	var/youtube_audio_url = null
 
 	var/gitreports = null
 	var/github_repo_url = null
@@ -101,9 +96,6 @@
 
 	//opengoon2 server
 	var/opengoon2_hostname = null
-
-	//youtube audio converter
-	var/youtube_audio_key = null
 
 	//Environment
 	var/env = "dev"
@@ -349,14 +341,13 @@
 				config.opengoon_api_ip = trim(value)
 			if ("opengoon_api_token")
 				config.opengoon_api_token = trim(value)
-			if ("opengoon_api_web_token")
-				config.opengoon_api_web_token = trim(value)
+
+			if ("youtube_enabled")
+				config.youtube_enabled = 1
 
 			if ("opengoon2_hostname")
 				config.opengoon2_hostname = trim(value)
 
-			if ("youtube_audio_key")
-				config.youtube_audio_key = trim(value)
 			if ("update_check_enabled")
 				config.update_check_enabled = 1
 			if ("dmb_filename")
@@ -387,23 +378,12 @@
 			if ("whitelist_enabled")
 				config.whitelistEnabled = 1
 
-			if ("player_notes_baseurl")
-				config.player_notes_baseurl = trim(value)
-
-			if ("player_notes_auth")
-				config.player_notes_auth = trim(value)
-
-			if("cloudsave_url")
-				config.cloudsave_url = trim(value)
-
 			if("weblog_viewer_url")
 				config.weblog_viewer_url = trim(value)
 			if("tutorial_url")
 				config.tutorial_url = trim(value)
 			if("dectalk_url")
 				config.dectalk_url = trim(value)
-			if("youtube_audio_url")
-				config.youtube_audio_url = trim(value)
 
 			if("gitreports")
 				config.gitreports = trim(value)

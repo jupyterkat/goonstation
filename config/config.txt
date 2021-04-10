@@ -2,6 +2,65 @@
 
 SERVER_SPECIFIC_CONFIGS
 
+# **UNIQUE** numerical identifier for the server. REQUIRED if you are using the API
+#SERVERKEY 1
+
+# Server text identifier
+# A little background on this: goon has four primary servers, with the IDs main1 - main4
+# However, it doesn't really matter what it's set to. I've made sure the API only really uses the numerical ID above
+#SERVERID main1
+
+# Server Region - Basically just adds a little bit of info the name if set. Mostly bloat and can be left unset
+#SERVERREGION
+
+# Server Name
+SERVERNAME AusGoon
+
+# Not really sure what this is, adds a numerical suffix or something to the name - leave off
+#SERVERSUFFIX
+
+# Whitelist toggle
+#WHITELIST_ENABLED
+
+# Toggle for the map switcher. Requires compatible API with a TGS backend configured.
+#ALLOW_MAP_SWITCHING
+
+# Fucked if I know what this is
+#ROTATING_FULL_LOGS
+
+# Admin permissions - all these are on by default anyway so why the toggles exist idk, but here they are
+ALLOW_ADMIN_SPAWNING
+ALLOW_ADMIN_REV
+ALLOW_ADMIN_SOUND
+ALLOW_ADMIN_JUMP
+
+# Medals on the hub
+#MEDALHUB
+#MEDALPASS
+
+# Api stuff
+# Needs to match API version else the API will refuse requests
+OPENGOON_API_VERSION 1.4
+OPENGOON_API_ENDPOINT http://127.0.0.1:6080/api
+# Used for the bans panel
+OPENGOON_API_SECURE_ENDPOINT https://webhooks.mcterra.id.au/secure-api
+OPENGOON_API_IP 127.0.0.1
+OPENGOON_API_TOKEN api_token
+
+# Toggle for youtube videos via the API.
+#ENABLE_YOUTUBE
+
+# Alternative IP address to allow through the IP filtering. Best to leave unconfigured unless you know *exactly* what you're doing.
+#OPENGOON2_HOSTNAME 0.0.0.0
+
+# Opengoon website parser for logs or something. Not implementent in my solution. Maybe you have a magic website that handles it idk.
+#OPENGOON_PARSER_URL http://localhost
+#OPENGOON_PARSER_KEY auth_key
+
+# crosscomms - key and stuff. use the server hop servers list.
+COMMS_KEY ws7ZkZJhUJDpcnCMbK4WYbLWEKtVu7knrYpw9CLB4kDbGh5REQw3PczfF2TJjhWb
+COMMS_NAME AusGoon
+
 # log OOC channel
 LOG_OOC
 
@@ -16,6 +75,16 @@ LOG_ACCESS
 
 # log game actions (start of round, results, etc.)
 LOG_GAME
+
+# additional logging that's not enabled by default (seriously, why isn't *DEBUG* logging enabled for a *DEV* server???)
+LOG_DEBUG
+LOG_COMBAT
+LOG_WHISPER
+LOG_AHELP
+LOG_MHELP
+LOG_STATION
+LOG_TELEPATHY
+LOG_VEHICLES
 
 # probabilities for game modes chosen in "secret" and "random" modes
 #
@@ -81,18 +150,13 @@ ALLOW_AI
 # Disable respawning
 NORESPAWN
 
-# Server Name
-SERVERNAME Goonstation
-#SERVERSUFFIX
-SERVERREGION Development
+CDN http://rsc.austation.net/goon-cdn
 
-CDN http://cdn.goonhub.com
-ENV dev
-# URL for cloudsaves
-CLOUDSAVE_URL http://spacebee.goonhub.com/api/cloudsave
+# Resource cache toggle
+#DISABLE_RESOURCE_CACHE
 
-player_notes_baseurl http://localhost:5555/notes
-player_notes_auth AUTH_NOTES
+# Setting to "dev" pulls in local resources from the browserassets folder and disables some API features.
+ENV prod
 
 # URL for the web log viewer
 WEBLOG_VIEWER_URL https://mini.xkeeper.net
@@ -101,25 +165,20 @@ WEBLOG_VIEWER_URL https://mini.xkeeper.net
 TUTORIAL_URL https://mini.xkeeper.net
 
 # URL for dectalk
-#DECTALK_URL http://spacebee.goonhub.com/api/tts
+#DECTALK_URL http://spacebee.opengoon.com/api/tts
 
 # URL for youtube audio
-#YOUTUBE_AUDIO_URL http://yt.goonhub.com/index.php
+#YOUTUBE_AUDIO_URL http://yt.opengoon.com/index.php
 
-# Self-explanatory website URLs
+# Self-explanatory website URLs - Terra: thanks franc (〃ω〃)
 GITHUB_REPO_URL https://github.com/austation/goonstation
 FORUMS_URL https://austation.net/
 WIKI_URL https://wiki.ss13.co/Main_Page
 RULES_URL https://austation.net/threads/server-rules.81/#post-369
-MAP_WEBVIEW_URL http://goonhub.com/maps/cogmap
+MAP_WEBVIEW_URL http://opengoon.com/maps/cogmap
 
 # Uncomment with a valid Org/Repo value to enable gitreports (https://gitreports.com)
 # GITREPORTS goonstation/goonstation
-
-banpanel_base http://127.0.0.1:5555
-banpanel_get /usec/bans/get
-banpanel_prev /usec/bans/getPrevious
-
 
 # Uncomment to enable server hopping. See alt_servers.txt for a list of destinations.
 ENABLE_SERVERHOP
