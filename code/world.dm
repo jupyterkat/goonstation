@@ -1492,7 +1492,7 @@ var/f_color_selector_handler/F_Color_Selector
 
 				if (addr != config.opengoon_api_ip) return 0 //ip filtering
 				var/auth = plist["auth"]
-				if (auth != sha256_string(config.opengoon_api_token)) return 0 //really bad md5 token security
+				if (auth != md5(config.opengoon_api_token)) return 0 //really bad md5 token security
 				var/theDatum = plist["datum"] ? plist["datum"] : null
 				var/theProc = "/proc/[plist["proc"]]"
 
