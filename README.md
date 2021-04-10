@@ -4,7 +4,9 @@
 
 <table>
 <tr><td align="right" >Master Status: </td>
-<td><img valign="sub" src="https://github.com/austation/goonstation/workflows/Beepsky/badge.svg?branch=master"/></td></tr>
+<td><img valign="sub" src="https://github.com/austation/goonstation/workflows/Beepsky/badge.svg?branch=master"/></td>
+<td><img valign="sub" src="https://github.com/austation/goonstation/workflows/Automaton/badge.svg?branch=master"/></td>
+</tr>
 </table>
 
 **Website:**  https://austation.net
