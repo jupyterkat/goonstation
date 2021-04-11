@@ -235,7 +235,7 @@ var/global/admin_sound_channel = 1014 //Ranges from 1014 to 1024
 
 	// Fetch via HTTP from opengoon
 	var/datum/http_request/request = new()
-	request.prepare(RUSTG_HTTP_METHOD_POST, "[config.opengoon_api_endpoint]/youtube/get/?server=[config.server_key]&key=[src.key]&video=[video]&auth=[config.opengoon_api_token]", "", "")
+	request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/youtube/get/?server=[config.server_key]&key=[src.key]&video=[video]&auth=[md5(config.opengoon_api_token)]", "", "")
 	request.begin_async()
 	UNTIL(request.is_complete())
 	var/datum/http_response/response = request.into_response()
