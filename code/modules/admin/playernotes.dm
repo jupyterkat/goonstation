@@ -21,7 +21,7 @@
 
 	// Fetch notes via HTTP
 	var/datum/http_request/request = new()
-	request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/api/notes/?[list2params(data)]", "", "")
+	request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/notes/?[list2params(data)]", "", "")
 	request.begin_async()
 	UNTIL(request.is_complete())
 	var/datum/http_response/response = request.into_response()
@@ -63,7 +63,7 @@
 
 	// Send data
 	var/datum/http_request/request = new()
-	request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/api/notes/?[list2params(data)]", "", "")
+	request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/notes/?[list2params(data)]", "", "")
 	request.begin_async()
 
 
@@ -84,5 +84,5 @@
 
 	// Send data
 	var/datum/http_request/request = new()
-	request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/api/notes/?[list2params(data)]", "", "")
+	request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/notes/?[list2params(data)]", "", "")
 	request.begin_async()
