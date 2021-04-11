@@ -122,7 +122,7 @@
 		if(!config.opengoon_api_endpoint)
 			logTheThing( "debug", src, null, "<b>CloudData/Francinum:</b> no cloudsave url set" )
 		var/datum/http_request/request = new() //If it fails, oh well...
-		request.prepare(RUSTG_HTTP_METHOD_POST, "[config.opengoon_api_endpoint]/cloudsave/?dataput&api_key=[md5(config.opengoon_api_token)]&ckey=[ckey]&key=[url_encode(key)]&value=[url_encode(clouddata[key])]", "", "")
+		request.prepare(RUSTG_HTTP_METHOD_GET, "[config.opengoon_api_endpoint]/cloudsave/?dataput&api_key=[md5(config.opengoon_api_token)]&ckey=[ckey]&key=[url_encode(key)]&value=[url_encode(clouddata[key])]", "", "")
 		request.begin_async()
 		return TRUE // I guess
 
