@@ -1095,7 +1095,7 @@ Read the rules, don't grief, and have fun!</div>"}
 			src.maptext_width = 600
 			src.maptext_height = 400
 			src.set_text({"<span class='ol vga'>
-Welcome to Clover!
+Welcome to AusGoon!
 New? <a style='color: #88f;' href="[config.tutorial_url]/ss13/tutorial/">Check the tutorial</a>!
 Have questions? Ask mentors with \[F3]!
 Need an admin? Message us with \[F1]."})
