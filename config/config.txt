@@ -48,7 +48,7 @@ OPENGOON_API_IP 127.0.0.1
 OPENGOON_API_TOKEN api_token
 
 # Toggle for youtube videos via the API.
-#ENABLE_YOUTUBE
+#YOUTUBE_ENABLED
 
 # Alternative IP address to allow through the IP filtering. Best to leave unconfigured unless you know *exactly* what you're doing.
 #OPENGOON2_HOSTNAME 0.0.0.0
