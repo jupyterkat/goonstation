@@ -2285,7 +2285,7 @@
 	/datum/manufacture/jumpsuit_brown,
 	/datum/manufacture/jumpsuit_black,
 	/datum/manufacture/jumpsuit_orange,
-	/datum/manufacture/pride_lgbt,
+/*	/datum/manufacture/pride_lgbt,
 	/datum/manufacture/pride_ace,
 	/datum/manufacture/pride_aro,
 	/datum/manufacture/pride_bi,
@@ -2294,7 +2294,7 @@
 	/datum/manufacture/pride_nb,
 	/datum/manufacture/pride_pan,
 	/datum/manufacture/pride_poly,
-	/datum/manufacture/pride_trans,
+	/datum/manufacture/pride_trans, */
 	/datum/manufacture/suit_black,
 	/datum/manufacture/dress_black,
 	/datum/manufacture/hat_black,
