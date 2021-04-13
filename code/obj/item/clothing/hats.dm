@@ -229,7 +229,7 @@
 	icon_state = "captain"
 	c_flags = SPACEWEAR
 	item_state = "caphat"
-	desc = "A symbol of the captain's rank, and the source of all his power."
+	desc = "A symbol of the captain's rank, and the source of all their power."
 	setupProperties()
 		..()
 		setProperty("meleeprot_head", 4)
@@ -505,6 +505,13 @@
 	desc = "For the inner dictator in you."
 	icon_state = "ntberet"
 	item_state = "ntberet"
+	c_flags = SPACEWEAR
+
+/obj/item/clothing/head/NTberet/commander
+	name = "Nanotrasen Beret"
+	desc = "For the inner space commander in you."
+	icon_state = "ntberet_commander"
+	item_state = "ntberet_commander"
 	c_flags = SPACEWEAR
 
 /obj/item/clothing/head/XComHair
