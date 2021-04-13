@@ -22,16 +22,8 @@
 	name = "pride wardrobe"
 	icon_state = "gay"
 	icon_closed = "gay"
-	spawn_contents = list(/obj/item/clothing/under/pride = 2,
-	/obj/item/clothing/under/pride/ace = 2,
-	/obj/item/clothing/under/pride/aro = 2,
-	/obj/item/clothing/under/pride/bi = 2,
-	/obj/item/clothing/under/pride/inter = 2,
-	/obj/item/clothing/under/pride/pan = 2,
-	/obj/item/clothing/under/pride/poly = 2,
-	/obj/item/clothing/under/pride/nb = 2,
-	/obj/item/clothing/under/pride/lesb = 2,
-	/obj/item/clothing/under/pride/trans = 2)
+	spawn_contents = list(/obj/item/clothing/under/color/grey = 4,
+	/obj/item/clothing/shoes/black = 5)
 
 /obj/storage/closet/wardrobe/black
 	name = "black wardrobe"
