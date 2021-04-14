@@ -8,13 +8,13 @@ SERVER_SPECIFIC_CONFIGS
 # Server text identifier
 # A little background on this: goon has four primary servers, with the IDs main1 - main4
 # However, it doesn't really matter what it's set to. I've made sure the API only really uses the numerical ID above
-#SERVERID main1
+SERVERID local
 
 # Server Region - Basically just adds a little bit of info the name if set. Mostly bloat and can be left unset
 #SERVERREGION
 
 # Server Name
-SERVERNAME AusGoon
+SERVERNAME AusGoon (TEST SERVER)
 
 # Not really sure what this is, adds a numerical suffix or something to the name - leave off
 #SERVERSUFFIX
@@ -40,12 +40,12 @@ ALLOW_ADMIN_JUMP
 
 # Api stuff
 # Needs to match API version else the API will refuse requests
-OPENGOON_API_VERSION 1.4
-OPENGOON_API_ENDPOINT http://127.0.0.1:6080/api
+#OPENGOON_API_VERSION 1.4
+#OPENGOON_API_ENDPOINT http://127.0.0.1:6080/api
 # Used for the bans panel
-OPENGOON_API_SECURE_ENDPOINT https://webhooks.mcterra.id.au/secure-api
-OPENGOON_API_IP 127.0.0.1
-OPENGOON_API_TOKEN api_token
+#OPENGOON_API_SECURE_ENDPOINT https://webhooks.mcterra.id.au/secure-api
+#OPENGOON_API_IP 127.0.0.1
+#OPENGOON_API_TOKEN api_token
 
 # Toggle for youtube videos via the API.
 #YOUTUBE_ENABLED
@@ -156,7 +156,7 @@ NORESPAWN
 #DISABLE_RESOURCE_CACHE
 
 # Setting to "dev" pulls in local resources from the browserassets folder and disables some API features.
-ENV prod
+ENV dev
 
 # URL for the web log viewer
 WEBLOG_VIEWER_URL https://mini.xkeeper.net
@@ -181,10 +181,10 @@ MAP_WEBVIEW_URL http://opengoon.com/maps/cogmap
 # GITREPORTS goonstation/goonstation
 
 # Uncomment to enable server hopping. See alt_servers.txt for a list of destinations.
-ENABLE_SERVERHOP
+#ENABLE_SERVERHOP
 
 # Uncomment to enable round experience requirements for the roles that specify them
-REQUIRE_JOB_EXP
+#REQUIRE_JOB_EXP
 
 # Uncomment to enable the chat filters. See chat_filter_ic.txt and chat_filter_ooc.txt
 #ENABLE_CHAT_FILTER
