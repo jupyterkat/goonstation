@@ -38,6 +38,8 @@
 	var/image/head_image_cust_one = null
 	var/image/head_image_cust_two = null
 	var/image/head_image_cust_three = null
+	var/image/head_image_cust_four = null
+	var/image/head_image_inners = null
 
 	var/image/head_image_special_one = null
 	var/image/head_image_special_two = null
@@ -166,6 +168,8 @@
 		src.head_image_cust_one = image('icons/mob/human_hair.dmi', "none", layer = MOB_HAIR_LAYER2)
 		src.head_image_cust_two = image('icons/mob/human_hair.dmi', "none", layer = MOB_HAIR_LAYER2)
 		src.head_image_cust_three = image('icons/mob/human_hair.dmi', "none", layer = MOB_HAIR_LAYER2)
+		src.head_image_cust_four = image('icons/mob/human_hair.dmi', "none", layer = MOB_EXTRAS_LAYER2)
+		src.head_image_inners = image('icons/mob/human_hair.dmi', "none", layer = MOB_EXTRAS_LAYER2)
 		src.head_image_special_one = image('icons/mob/human_hair.dmi', "none", layer = MOB_HAIR_LAYER2)
 		src.head_image_special_two = image('icons/mob/human_hair.dmi', "none", layer = MOB_HAIR_LAYER2)
 		src.head_image_special_three = image('icons/mob/human_hair.dmi', "none", layer = MOB_HAIR_LAYER2)
@@ -176,6 +180,8 @@
 		src.head_image_cust_one = image(icon = 'icons/mob/human_hair.dmi', icon_state = hair_list[AHead.customization_first], layer = MOB_HAIR_LAYER2)
 		src.head_image_cust_two = image(icon = 'icons/mob/human_hair.dmi', icon_state = hair_list[AHead.customization_second], layer = MOB_HAIR_LAYER2)
 		src.head_image_cust_three = image(icon = 'icons/mob/human_hair.dmi', icon_state = hair_list[AHead.customization_third], layer = MOB_HAIR_LAYER2)
+		src.head_image_cust_four = image(icon = AHead.extras_4_icon, icon_state = AHead.extras_4_state, layer = AHead.extras_4_layer)
+		src.head_image_inners = image(icon = AHead.extras_4_icon, icon_state = AHead.extras_has_inners, layer = AHead.extras_4_layer)
 
 		src.head_image_cust_one.color = AHead.customization_first_color
 		src.head_image_cust_two.color = AHead.customization_second_color
@@ -217,6 +223,17 @@
 				colorheck = "#FFFFFF"
 		src.head_image_special_three.color = colorheck
 
+		switch(AHead.extras_4_color_ref)
+			if(CUST_1)
+				colorheck = AHead.customization_first_color
+			if(CUST_2)
+				colorheck = AHead.customization_second_color
+			if(CUST_3)
+				colorheck = AHead.customization_third_color
+			else
+				colorheck = "#FFFFFF"
+		src.head_image_cust_four.color = colorheck
+
 		if (!src.donor) // maybe someone spawned us in? Construct the dropped thing
 			update_head_image()
 		else
@@ -252,9 +269,13 @@
 				src.head_image_cust_two.pixel_y = 0
 				src.head_image_cust_three.pixel_x = 0
 				src.head_image_cust_three.pixel_y = 0
+				src.head_image_cust_four.pixel_x = 0
+				src.head_image_cust_four.pixel_y = 0
 				src.overlays += src.head_image_cust_one
 				src.overlays += src.head_image_cust_two
 				src.overlays += src.head_image_cust_three
+				src.overlays += src.head_image_cust_four
+				src.overlays += src.head_image_inners
 			if(src.donor_appearance?.mob_appearance_flags & HAS_SPECIAL_HAIR || src.donor?.special_hair_override)
 				src.head_image_special_one.pixel_x = 0
 				src.head_image_special_one.pixel_y = 0

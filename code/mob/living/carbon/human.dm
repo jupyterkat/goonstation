@@ -54,6 +54,8 @@
 	var/image/image_cust_one = null
 	var/image/image_cust_two = null
 	var/image/image_cust_three = null
+	var/image/image_cust_four = null
+	var/image/image_cust_four_inners = null
 	var/image/image_special_one = null
 	var/image/image_special_two = null
 	var/image/image_special_three = null
@@ -68,6 +70,7 @@
 	var/cust_one_state = "short"
 	var/cust_two_state = "None"
 	var/cust_three_state = "none"
+	var/cust_four_state = "none"
 	var/special_one_icon = 'icons/mob/human_hair.dmi'
 	var/special_one_state = "none"
 	var/special_two_icon = 'icons/mob/human_hair.dmi'
