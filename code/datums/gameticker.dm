@@ -162,7 +162,7 @@ var/global/current_state = GAME_STATE_WORLD_INIT
 	if (ASS_JAM || istype(src.mode, /datum/game_mode/construction))
 		looc_allowed = 1
 		boutput(world, "<B>LOOC has been automatically enabled.</B>")
-	else
+	else if(!config.midround_ooc)
 		ooc_allowed = 0
 		boutput(world, "<B>OOC has been automatically disabled until the round ends.</B>")
 #endif

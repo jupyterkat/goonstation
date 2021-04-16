@@ -150,6 +150,9 @@ ALLOW_AI
 # Disable respawning
 NORESPAWN
 
+# Toggle for midround OOC chat
+MIDROUND_OOC
+
 #CDN http://rsc.austation.net/goon-cdn
 
 # Resource cache toggle

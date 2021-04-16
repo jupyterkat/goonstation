@@ -125,6 +125,8 @@
 	var/static/regex/filter_regex_ooc
 	var/static/regex/filter_regex_ic
 
+	var/midround_ooc = 0
+
 /datum/configuration/New()
 	..()
 	var/list/L = childrentypesof(/datum/game_mode)
@@ -437,6 +439,9 @@
 
 			if ("whitelist_path")
 				config.whitelist_path = trim(value)
+
+			if ("midround_ooc")
+				config.midround_ooc = 1
 
 			else
 				logDiary("Unknown setting in configuration: '[name]'")
