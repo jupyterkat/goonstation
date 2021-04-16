@@ -175,6 +175,16 @@
 	var/special_hair_3_layer = MOB_HAIR_LAYER2
 	var/special_hair_3_layer_f = MOB_HAIR_LAYER2
 
+	var/extras_4_icon
+	var/extras_4_icon_f
+	var/extras_4_state
+	var/extras_4_state_f
+	var/extras_4_color = CUST_1
+	var/extras_4_color_f
+	var/extras_4_layer = MOB_EXTRAS_LAYER2
+	var/extras_4_layer_f = MOB_EXTRAS_LAYER2
+	var/extras_has_inners
+
 	/// These details will show up layered just in front of the mob's skin
 	/// The image to be inserted into the mob's appearanceholder's mob_detail_1
 	var/detail_1_icon
@@ -345,6 +355,13 @@
 				AH.special_hair_3_color_ref = src.special_hair_3_color
 				AH.special_hair_3_layer = src.special_hair_1_layer
 				AH.special_hair_3_offset_y = src.head_offset
+
+				AH.extras_4_icon = src.extras_4_icon
+				AH.extras_4_state = src.extras_4_state
+				AH.extras_4_color_ref = src.extras_4_color
+				AH.extras_4_layer = src.extras_4_layer
+				AH.extras_4_offset_y = src.head_offset
+				AH.extras_has_inners = src.extras_has_inners
 
 				AH.mob_detail_1_icon = src.detail_1_icon
 				AH.mob_detail_1_state = src.detail_1_state
@@ -622,6 +639,15 @@
 				src.special_hair_3_color = src.special_hair_3_color_f
 			if(src.special_hair_3_layer_f)
 				src.special_hair_3_layer = src.special_hair_3_layer_f
+
+			if(src.extras_4_icon_f)
+				src.extras_4_icon = src.extras_4_icon_f
+			if(src.extras_4_state_f)
+				src.extras_4_state = src.extras_4_state_f
+			if(src.extras_4_color_f)
+				src.extras_4_color = src.extras_4_color_f
+			if(src.extras_4_layer_f)
+				src.extras_4_layer = src.extras_4_layer_f
 
 			if(src.detail_1_icon_f)
 				src.detail_1_icon = src.detail_1_icon_f

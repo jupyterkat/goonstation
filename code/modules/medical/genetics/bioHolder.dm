@@ -79,6 +79,13 @@ var/list/datum/bioEffect/mutini_effects = list()
 	var/special_hair_3_layer = MOB_HAIR_LAYER2
 	var/special_hair_3_offset_y = 0
 
+	var/extras_4_icon = 'icons/mob/human_hair.dmi'
+	var/extras_4_state = "none"
+	var/extras_4_color_ref = CUST_1
+	var/extras_4_layer = MOB_EXTRAS_LAYER2
+	var/extras_4_offset_y = 0
+	var/extras_has_inners = null
+
 	/// Intended for extra, non-head body features that may or may not be hair (just not on their head)
 	/// An image to be overlaid on the mob just above their skin
 	var/mob_detail_1_icon = 'icons/mob/human_hair.dmi'
@@ -211,6 +218,13 @@ var/list/datum/bioEffect/mutini_effects = list()
 		special_hair_3_state = toCopy.special_hair_3_state
 		special_hair_3_color_ref = toCopy.special_hair_3_color_ref
 		special_hair_3_offset_y = toCopy.special_hair_3_offset_y
+
+		extras_4_icon = toCopy.extras_4_icon
+		extras_4_state = toCopy.extras_4_state
+		extras_4_color_ref = toCopy.extras_4_color_ref
+		extras_4_layer = toCopy.extras_4_layer
+		extras_4_offset_y = toCopy.extras_4_offset_y
+		extras_has_inners = toCopy.extras_has_inners
 
 		mob_detail_1_icon = toCopy.mob_detail_1_icon
 		mob_detail_1_state = toCopy.mob_detail_1_state

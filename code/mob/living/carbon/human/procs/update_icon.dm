@@ -655,6 +655,10 @@
 		src.image_cust_three = my_head.head_image_cust_three
 		src.cust_three_state = my_head.head_image_cust_three?.icon_state
 
+		src.image_cust_four = my_head.head_image_cust_four
+		src.cust_four_state = my_head.head_image_cust_four?.icon_state
+		src.image_cust_four_inners = my_head.head_image_inners
+
 		src.image_special_one = my_head.head_image_special_one
 		src.special_one_state = my_head.head_image_special_one?.icon_state
 
@@ -669,6 +673,8 @@
 				src.hair_standing.overlays += image_cust_one
 				src.hair_standing.overlays += image_cust_two
 				src.hair_standing.overlays += image_cust_three
+				src.hair_standing.overlays += image_cust_four
+				src.hair_standing.overlays += image_cust_four_inners
 				UpdateOverlays(hair_standing, "hair", 1, 1)
 			else
 				UpdateOverlays(null, "hair", 1, 1)
@@ -791,11 +797,14 @@
 		src.image_cust_one?.layer = MOB_HAIR_LAYER1
 		src.image_cust_two?.layer = MOB_HAIR_LAYER1
 		src.image_cust_three?.layer = MOB_HAIR_LAYER1
+		src.image_cust_four_inners?.layer = MOB_EXTRAS_LAYER1
+		src.image_cust_four?.layer = MOB_EXTRAS_LAYER1
 	else
 		src.image_cust_one?.layer = MOB_HAIR_LAYER2
 		src.image_cust_two?.layer = MOB_HAIR_LAYER2
 		src.image_cust_three?.layer = MOB_HAIR_LAYER2
-
+		src.image_cust_four_inners?.layer = MOB_EXTRAS_LAYER2
+		src.image_cust_four?.layer = MOB_EXTRAS_LAYER2
 
 var/list/update_body_limbs = list("r_arm" = "stump_arm_right", "l_arm" = "stump_arm_left", "r_leg" = "stump_leg_right", "l_leg" = "stump_leg_left")
 
