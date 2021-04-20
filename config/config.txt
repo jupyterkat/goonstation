@@ -167,9 +167,6 @@ WEBLOG_VIEWER_URL https://mini.xkeeper.net
 # URL for SS13 tutorial
 TUTORIAL_URL https://mini.xkeeper.net
 
-# URL for dectalk
-#DECTALK_URL http://spacebee.opengoon.com/api/tts
-
 # URL for youtube audio
 #YOUTUBE_AUDIO_URL http://yt.opengoon.com/index.php
 

@@ -81,7 +81,6 @@
 
 	var/weblog_viewer_url = null
 	var/tutorial_url = null
-	var/dectalk_url = null
 
 	var/gitreports = null
 	var/github_repo_url = null
@@ -388,8 +387,6 @@
 				config.weblog_viewer_url = trim(value)
 			if("tutorial_url")
 				config.tutorial_url = trim(value)
-			if("dectalk_url")
-				config.dectalk_url = trim(value)
 
 			if("gitreports")
 				config.gitreports = trim(value)
