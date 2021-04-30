@@ -338,6 +338,7 @@ var/list/admin_verbs = list(
 		/client/proc/cmd_blindfold_monkeys,
 		/client/proc/cmd_swampify_station,
 		/client/proc/cmd_trenchify_station,
+		/client/proc/cmd_special_shuttle,
 
 		/datum/admins/proc/toggleaprilfools,
 		/client/proc/cmd_admin_pop_off_all_the_limbs_oh_god,
@@ -441,9 +442,6 @@ var/list/admin_verbs = list(
 		/client/proc/spawn_dbg,
 #elif defined(ENABLE_SPAWN_DEBUG_2)
 		/client/proc/spawn_dbg,
-#endif
-#ifdef INCLUDE_BUGGY_LUA_SHIT
-		/client/proc/RunLuaString,
 #endif
 		),
 

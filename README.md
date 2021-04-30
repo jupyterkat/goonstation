@@ -34,6 +34,13 @@ For our auto-generated code documentation, visit our code docs! There's some goo
 [<img src=".github/assets/maps.png" alt="Mapping Guidelines" width="150" align="left">](https://hackmd.io/@ZeWaka/goonmap)
 To contribute maps to the game, please follow our mapping guidelines! This details the **required** pieces for a map submission.
 
+## FAQ (Frequently Asked Question)
+
+#### Q: I'm getting a compilation error like `unable to open +secret\__secret.dme`.
+
+You’ll need to create a file named `__secret.dme` in the +secret subdirectory. It should be blank and have no contents. Read the [Goonstation Development Guide](https://hackmd.io/@ZeWaka/goondev) for additional details.
+
+
 ## LICENSE
 [![license-badge](https://forthebadge.com/images/badges/cc-nc-sa.svg)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 

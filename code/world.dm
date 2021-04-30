@@ -212,7 +212,7 @@ var/f_color_selector_handler/F_Color_Selector
 
 #if defined(SERVER_SIDE_PROFILING) && (defined(SERVER_SIDE_PROFILING_FULL_ROUND) || defined(SERVER_SIDE_PROFILING_PREGAME))
 #warn Profiler enabled at start of init
-		world.Profile(PROFILE_START)
+		world.Profile(PROFILE_START, "sendmaps", "json")
 #endif
 		server_start_time = world.timeofday
 
@@ -221,11 +221,13 @@ var/f_color_selector_handler/F_Color_Selector
 #endif
 		Z_LOG_DEBUG("Preload", "Map preload running.")
 
+#ifndef RUNTIME_CHECKING
 		world.log << ""
 		world.log << "========================================"
 		world.log << "\[[time2text(world.timeofday,"hh:mm:ss")]] Starting new round"
 		world.log << "========================================"
 		world.log << ""
+#endif
 
 		Z_LOG_DEBUG("Preload", "Loading config...")
 		config = new /datum/configuration()
@@ -542,7 +544,9 @@ var/f_color_selector_handler/F_Color_Selector
 
 	Z_LOG_DEBUG("World/Init", "Notifying Discord of new round")
 	discord_send("New round starting on [config.server_name] with map [getMapNameFromID(map_setting)] and gamemode [(ticker?.hide_mode) ? "secret" : master_mode]!", "status")
+#ifndef RUNTIME_CHECKING
 	world.log << "Map: [getMapNameFromID(map_setting)]"
+#endif
 
 	Z_LOG_DEBUG("World/Init", "Notifying hub of new round")
 	round_start_data() //Tell the hub site a round is starting
@@ -622,6 +626,10 @@ var/f_color_selector_handler/F_Color_Selector
 	Z_LOG_DEBUG("World/Init", "Running map-specific initialization...")
 	map_settings.init()
 
+	Z_LOG_DEBUG("World/Init", "Initialize prefab shuttle datums...")
+	var/datum/prefab_shuttle/D = new
+	D.inialize_prefabs()
+
 	UPDATE_TITLE_STATUS("Ready")
 	current_state = GAME_STATE_PREGAME
 	Z_LOG_DEBUG("World/Init", "Now in pre-game state.")
@@ -649,6 +657,7 @@ var/f_color_selector_handler/F_Color_Selector
 	placeAllPrefabs()
 #endif
 #ifdef RUNTIME_CHECKING
+	populate_station()
 	SPAWN_DBG(10 SECONDS)
 		Reboot_server()
 #endif
@@ -682,10 +691,10 @@ var/f_color_selector_handler/F_Color_Selector
 #warn Profiler enabled at end of game (full)
 	var/profile_out = file("data/profile/[time2text(world.realtime, "YYYY-MM-DD hh-mm-ss")]-full.log")
 #endif
-	profile_out << world.Profile(PROFILE_START, "json")
+	profile_out << world.Profile(PROFILE_START, "sendmaps", "json")
 	world.log << "Dumped profiler data."
 	// not gonna need this again
-	world.Profile(PROFILE_STOP)
+	world.Profile(PROFILE_STOP, "sendmaps", "json")
 #endif
 
 	lagcheck_enabled = 0
@@ -703,9 +712,7 @@ var/f_color_selector_handler/F_Color_Selector
 	logTheThing("diary", null, "Shutting down after testing for runtimes.", "admin")
 	if (isnull(runtimeDetails))
 		world.log << "Runtime checking failed due to missing runtimeDetails global list"
-	else if (length(runtimeDetails) == 0)
-		text2file("No runtimes generated!", "no_runtimes.txt")
-	else
+	else if (length(runtimeDetails) > 0)
 		world.log << "[length(runtimeDetails)] runtimes generated:"
 		for (var/idx in runtimeDetails)
 			var/list/details = runtimeDetails[idx]
